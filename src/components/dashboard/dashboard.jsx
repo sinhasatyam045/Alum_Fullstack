@@ -1,6 +1,8 @@
 import React from 'react';
 import Post from '../helper/post';
 import { useNavigate } from 'react-router-dom';
+import Navbar from '../helper/navbar';
+
 
 
 const Dashboard = () => {
@@ -25,6 +27,10 @@ const Dashboard = () => {
     return (
         <div className='overflow-hidden'>
             <div className="w-full flex justify-between">
+                <div className='w-full px-16 bg-indigo-200 fixed'>
+                    <Navbar />
+
+                </div>
                 {/* Profile Section */}
                 <div className="w-1/5 h-screen bg-indigo-200 p-4 flex flex-col items-center ">
                     <div className='pb-20'>
@@ -44,6 +50,13 @@ const Dashboard = () => {
                     {/* Navigation Menu */}
                     <div className="mt-4 w-4/5">
                         <ul className="text-white space-y-2">
+                        <li>
+                                <button className="flex justify-between w-full bg-blue-900 hover:bg-blue-700 text-white px-4 py-2 rounded-xl focus:outline-none">
+                                    <div>Messages
+                                        </div> 💬
+                                </button>
+                                
+                            </li>
                             <li>
                                 <button className="flex justify-between w-full bg-blue-900 hover:bg-blue-700 text-white px-4 py-2 rounded-xl focus:outline-none"
                                 onClick={handleNotificationClick}
@@ -55,13 +68,7 @@ const Dashboard = () => {
 
                                 </button>
                                                             </li>
-                            <li>
-                                <button className="flex justify-between w-full bg-blue-900 hover:bg-blue-700 text-white px-4 py-2 rounded-xl focus:outline-none">
-                                    <div>Messages
-                                        </div> 💬
-                                </button>
-                                
-                            </li>
+                           
                             <li>
                                 <button className="flex justify-between w-full bg-blue-900 hover:bg-blue-700 text-white px-4 py-2 rounded-xl focus:outline-none">
                                    <div>
@@ -73,7 +80,7 @@ const Dashboard = () => {
                             <li>
                                 <button className="flex justify-between w-full bg-blue-900 hover:bg-blue-700 text-white px-4 py-2 rounded-xl focus:outline-none">
                                     <div>Saved Items
-                                        </div> 📌
+                                        </div> 🏷️
                                 </button>
                                 
                             </li>

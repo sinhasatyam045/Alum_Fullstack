@@ -23,7 +23,11 @@ const Login = () => {
     };
     return (
         <div>
+            <div className='w-4/5 mx-auto'>
             <Navbar />
+
+
+            </div>
             <div className="flex h-screen bg-indigo-200">
                 {/* //bg-darkblue is not working here */}
                 <div className="w-1/2 flex justify-end">
