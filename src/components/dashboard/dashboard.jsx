@@ -1,12 +1,35 @@
 import React from 'react';
 import Post from '../helper/post';
+import { useNavigate } from 'react-router-dom';
+
 
 const Dashboard = () => {
+    const navigate = useNavigate();
+
+    function handleMessageClick() {
+        navigate('/message');
+    };
+
+    function handleNotificationClick() {
+        navigate('/notification');
+
+    };
+
+    function handleUpdateClick() {
+        navigate('/update');
+    };
+    
+    function handleSavedClick() {
+        navigate('/saved');
+     };
     return (
         <div className='overflow-hidden'>
             <div className="w-full flex justify-between">
                 {/* Profile Section */}
-                <div className="w-1/5 h-screen bg-indigo-200 p-4 flex flex-col items-center pt-20">
+                <div className="w-1/5 h-screen bg-indigo-200 p-4 flex flex-col items-center ">
+                    <div className='pb-20'>
+                        <img src="Images/logo.png" alt="" />
+                    </div>
                     <div className="mb-4">
                         <img
                             src="Images/profile.jpg"
@@ -22,24 +45,37 @@ const Dashboard = () => {
                     <div className="mt-4 w-4/5">
                         <ul className="text-white space-y-2">
                             <li>
-                                <button className="w-full bg-blue-900 hover:bg-blue-700 text-white px-4 py-2 rounded-xl focus:outline-none">
+                                <button className="flex justify-between w-full bg-blue-900 hover:bg-blue-700 text-white px-4 py-2 rounded-xl focus:outline-none"
+                                onClick={handleNotificationClick}
+                                >
+                                    <div>
                                     Notifications
+                                    </div>
+                                     🔔
+
                                 </button>
+                                                            </li>
+                            <li>
+                                <button className="flex justify-between w-full bg-blue-900 hover:bg-blue-700 text-white px-4 py-2 rounded-xl focus:outline-none">
+                                    <div>Messages
+                                        </div> 💬
+                                </button>
+                                
                             </li>
                             <li>
-                                <button className="w-full bg-blue-900 hover:bg-blue-700 text-white px-4 py-2 rounded-xl focus:outline-none">
-                                    Messages
+                                <button className="flex justify-between w-full bg-blue-900 hover:bg-blue-700 text-white px-4 py-2 rounded-xl focus:outline-none">
+                                   <div>
+                                    Events
+                                    </div>  📅
                                 </button>
+                                
                             </li>
                             <li>
-                                <button className="w-full bg-blue-900 hover:bg-blue-700 text-white px-4 py-2 rounded-xl focus:outline-none">
-                                    Updates
+                                <button className="flex justify-between w-full bg-blue-900 hover:bg-blue-700 text-white px-4 py-2 rounded-xl focus:outline-none">
+                                    <div>Saved Items
+                                        </div> 📌
                                 </button>
-                            </li>
-                            <li>
-                                <button className="w-full bg-blue-900 hover:bg-blue-700 text-white px-4 py-2 rounded-xl focus:outline-none">
-                                    Saved
-                                </button>
+                                
                             </li>
                         </ul>
                     </div>
@@ -100,15 +136,15 @@ const Dashboard = () => {
                         {/* Styled Bullet Points for Important Notices */}
                         <ul className="text-blue-900 list-disc pl-4 space-y-2">
                             <li className="flex items-center">
-                                <span className="bg-yellow-500 rounded-full h-3 w-3 mr-2"></span>
+                                🎯
                                 Important notice 1
                             </li>
                             <li className="flex items-center">
-                                <span className="bg-yellow-500 rounded-full h-3 w-3 mr-2"></span>
+                            🎯
                                 Important notice 2
                             </li>
                             <li className="flex items-center">
-                                <span className="bg-yellow-500 rounded-full h-3 w-3 mr-2"></span>
+                            🎯
                                 Important notice 3
                             </li>
                             {/* Add more styled bullet points as needed */}
