@@ -1,5 +1,5 @@
 import React from 'react';
-
+import handleAdminClick from '../dashboard/dashboard';
 const Navbar = () => {
     return (
         <header className="bg-transparent  py-4  mx-auto">
