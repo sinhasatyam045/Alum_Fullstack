@@ -55,7 +55,8 @@ const Dashboard = () => {
                     <div className="mt-4 w-4/5">
                         <ul className="text-white space-y-2">
                         <li>
-                                <button className="flex justify-between w-full bg-blue-900 hover:bg-blue-700 text-white px-4 py-2 rounded-xl focus:outline-none">
+                                <button className="flex justify-between w-full bg-blue-900 hover:bg-blue-700 text-white px-4 py-2 rounded-xl focus:outline-none"
+                                onClick={handleMessageClick}>
                                     <div>Messages
                                         </div> 💬
                                 </button>
