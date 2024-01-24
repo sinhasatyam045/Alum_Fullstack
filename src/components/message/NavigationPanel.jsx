@@ -6,7 +6,7 @@ import { BiHome, BiBookmark, BiMessage, BiCalendarEvent, BiFace } from 'react-ic
 
 const NavigationPanel = () => {
   return (
-    <div className="flex flex-col items-start p-4">
+    <div className="flex flex-col items-start ">
       <NavItem to="/" icon={<BiHome />} label="Home" />
       <NavItem to="/messages" icon={<BiMessage />} label="Message" />
 
@@ -21,7 +21,7 @@ const NavigationPanel = () => {
 
 const NavItem = ({ to, icon, label }) => {
   return (
-    <Link to={to} className="flex items-center space-x-6 cursor-pointer w-full py-2 transition duration-300 hover:bg-blue-500 hover:text-white hover:rounded-full hover: p-6">
+    <Link to={to} className="flex items-center space-x-4 cursor-pointer w-full py-2 transition duration-300 hover:bg-blue-500 hover:text-white hover:rounded-lg: p-6">
       <span className="text-gray-800">{icon}</span>
       <span>{label}</span>
     </Link>
