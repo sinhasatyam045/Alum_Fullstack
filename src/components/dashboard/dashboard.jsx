@@ -143,16 +143,13 @@ const Dashboard = () => {
                         {/* Styled Bullet Points for Important Notices */}
                         <ul className="text-blue-900 list-disc pl-4 space-y-2">
                             <li className="flex items-center">
-                                🎯
-                                Important notice 1
+                                🎯Important notice 1
                             </li>
                             <li className="flex items-center">
-                            🎯
-                                Important notice 2
+                                 🎯Important notice 2
                             </li>
                             <li className="flex items-center">
-                            🎯
-                                Important notice 3
+                                 🎯Important notice 3
                             </li>
                             {/* Add more styled bullet points as needed */}
                         </ul>
