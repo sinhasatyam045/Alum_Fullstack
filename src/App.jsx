@@ -7,6 +7,7 @@ import Feedback from './components/forms/feedbackForm'
 import MessageBoard from './components/message/messageBoard'
 
 
+
 function App() {
   return (
     <Router>
@@ -18,7 +19,8 @@ function App() {
           <Route path="/" element={<Login />} />      
           <Route path="/feedback" element={<Feedback />} /> 
           <Route path="/notification" element={<Notification />} />  
-          <Route path="/message" element={<MessageBoard />} />  
+          <Route path="/message" element={<MessageBoard />} />
+          <Route path="/home" element={<Home />} />  
 
 
         </Routes>
