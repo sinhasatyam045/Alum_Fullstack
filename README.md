@@ -33,7 +33,7 @@ Before you begin, ensure you have Node.js and npm installed on your machine.
    git checkout master
    ```
 
-3. Install dependencies:
+4. Install dependencies:
 
    ```bash
    npm install
