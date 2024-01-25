@@ -7,7 +7,7 @@ import alumni from '../../assets/alumni.json'
 import { FaFacebook, FaGoogle, FaTwitter } from 'react-icons/fa';
 
 
-const Login = () => {
+const AlumniLoginLegacy = () => {
     const navigate = useNavigate();
 
     const handleLogin = () => {
@@ -92,4 +92,4 @@ const Login = () => {
     );
 };
 
-export default Login;
+export default AlumniLoginLegacy;

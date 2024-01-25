@@ -23,7 +23,7 @@ a:hover {
 
 body {
   margin: 0;
-  
+  background-color: #163560;
  
 }
 
@@ -43,7 +43,7 @@ button {
   cursor: pointer;
   
 }
-button:hover {
+/* button:hover {
   
   filter: brightness(1.4);
-}
+} */
