@@ -19,7 +19,7 @@ Before you begin, ensure you have Node.js and npm installed on your machine.
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/ValscoTech/AlumUnity_PragyanSchool/tree/master
+   git clone https://github.com/ValscoTech/AlumUnity_PragyanSchool
    ```
 
 2. Navigate to the project directory:
@@ -27,8 +27,13 @@ Before you begin, ensure you have Node.js and npm installed on your machine.
    ```bash
    cd AlumUnity_PragyanSchool
    ```
+3. Navigate to the master branch:
 
-3. Install dependencies:
+   ```bash
+   git checkout master
+   ```
+
+4. Install dependencies:
 
    ```bash
    npm install
