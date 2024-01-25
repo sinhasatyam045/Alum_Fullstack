@@ -3,7 +3,6 @@ import Dashboard from './components/dashboard/dashboard';
 import AlumniLoginLegacy from './components/login/AlumniLoginLegacy';
 import Notification from './components/notification/notification';
 import LoginPage from './components/login/LoginPage';
-import AlumniLogin from './components/login/AlumniLogin';
 import TripleLogin from './components/login/TripleLogin';
 
 function App() {
@@ -17,10 +16,9 @@ function App() {
     //     </Routes>
     //   </div>
     // </Router>
-    <div className='w-screen h-screen'> 
+    <div className='w-screen h-screen overflow-auto'> 
+      <LoginPage />
       <TripleLogin />
-      {/* <LoginPage /> */}
-      
     </div>
   );
 }

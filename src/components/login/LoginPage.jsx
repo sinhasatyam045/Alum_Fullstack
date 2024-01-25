@@ -35,7 +35,9 @@ const LoginPage = () => {
 
                     {/* Buttons in Column Form */}
                     <div className="flex flex-col space-y-6 mt-10">
-                        <button className=" text-lg text-white py-4 px-4 rounded-full">
+                        <button
+                            className=" text-lg text-white py-4 px-4 rounded-full"
+                        >
                             Alumni
                         </button>
                         <button className=" text-lg text-white py-4 px-4 rounded-full">
@@ -53,6 +55,7 @@ const LoginPage = () => {
                         </div>
                         <div className="w-1/4 bg-indigo-100 h-0.5 scale-y-50"></div>
                     </div>
+
                     {/* Footer with Another Button */}
                     <div className="flex flex-col space-y-10 mt-4 items-center">
                         <button className=" text-lg font-bold w-1/2 bg-yellow-400 text-blue-900 py-4 px-4 rounded-full">
