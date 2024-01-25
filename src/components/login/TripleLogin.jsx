@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
 import { FaFacebook, FaGoogle, FaTwitter } from 'react-icons/fa'
+import { useNavigate } from 'react-router-dom'
 // Important info for Backend Devs :
 
 // The handling between Faculty, Student or Alumni Login is decided by the variable activeUser
@@ -12,6 +13,7 @@ import { FaFacebook, FaGoogle, FaTwitter } from 'react-icons/fa'
 const TripleLogin = () => {
     const [activeUser, setactiveUser] = useState(1) //default set to Student
     const [imageOpacity, setImageOpacity] = useState(100)
+    const navigate = useNavigate();
 
     const handleButtonClick = (buttonNumber) => {
         setactiveUser(buttonNumber)
@@ -19,9 +21,14 @@ const TripleLogin = () => {
         setTimeout(() => setImageOpacity(1), 100)
     }
 
+    const handleLoginClick = () => {
+        navigate('/dashboard');
+    }
+
     return (
-        <div className="w-full h-full flex justify-center items-center">
-            <div className="flex  items-center justify-center w-full h-5/6 bg-indigo-100">
+        <>
+         <div className="w-full h-full flex justify-center items-center">
+            <div className="flex  items-center justify-center w-full h-screen bg-indigo-100">
                 <div className="flex items-center align-center p-10 m-10">
                     {activeUser === 1 && (
                         <img
@@ -33,6 +40,7 @@ const TripleLogin = () => {
                                 opacity: imageOpacity,
                                 transition: 'opacity 0.2s ease-in-out',
                             }}
+                            className='w-96'
                         />
                     )}
                     {activeUser === 2 && (
@@ -45,6 +53,7 @@ const TripleLogin = () => {
                                 opacity: imageOpacity,
                                 transition: 'opacity 0.2s ease-in-out',
                             }}
+                            className='w-96'
                         />
                     )}
                     {activeUser === 3 && (
@@ -57,11 +66,14 @@ const TripleLogin = () => {
                                 opacity: imageOpacity,
                                 transition: 'opacity 0.2s ease-in-out',
                             }}
+                            className='w-96'
                         />
                     )}
                 </div>
 
-                <div className="bg-white w-5/6 h-11/12  shadow-xl rounded-3xl p-7 m-10 flex flex-col items-center">
+                <div className="bg-white w-1/3 shadow-xl rounded-3xl p-7 m-10 flex flex-col items-center">
+
+                    {/* sliding Button */}
                     <div className="bg-blue-100 rounded-full w-5/6 flex justify-center relative">
                         {/* Sliding Button */}
                         <button
@@ -73,22 +85,22 @@ const TripleLogin = () => {
                                     activeUser === 1
                                         ? '0'
                                         : activeUser === 2
-                                        ? '33%'
-                                        : '67%',
+                                            ? '33%'
+                                            : '67%',
                                 transition: 'all 0.3s ease-in-out',
                                 boxShadow: '0 0 20px rgba(30, 58, 138, 0.7)',
                                 ':hover': {
                                     backgroundColor: '#1e3a8a',
                                 },
-                                
+
                             }}
                         >
                             <p className="font-extrabold">
                                 {activeUser === 1
                                     ? 'STUDENT'
                                     : activeUser === 2
-                                    ? 'FACULTY'
-                                    : 'ALUMNI'}
+                                        ? 'FACULTY'
+                                        : 'ALUMNI'}
                             </p>
                         </button>
 
@@ -185,6 +197,7 @@ const TripleLogin = () => {
                                 boxShadow: '0 0 10px rgba(30, 58, 138, 0.7)',
                             }}
                             className=" text-lg font-bold w-1/3 text-white py-4 p-2 mb-8 rounded-full mx-auto my-4 hover:bg-blue-800 transition-all duration-200 ease-in-out"
+                            onClick={handleLoginClick}
                         >
                             LOGIN
                         </button>
@@ -199,7 +212,7 @@ const TripleLogin = () => {
                         </div>
                         <div className="w-1/3 bg-blue-900 h-0.5 scale-y-50"></div>
                     </div>
-
+                    {/* Social buttons */}
                     <div className="flex w-1/2 mt-5 -mb-5 ">
                         <button
                             style={{
@@ -207,7 +220,7 @@ const TripleLogin = () => {
                             }}
                             className=" text-lg font-bold w-1/4 text-white p-2 rounded-full mx-auto my-4 hover:bg-blue-800 transition-all duration-200 ease-in-out"
                         >
-                            <FaGoogle size={32} className="mx-auto" />
+                            <FaGoogle size={22} className="mx-auto m-2" />
                         </button>
                         <button
                             style={{
@@ -215,7 +228,7 @@ const TripleLogin = () => {
                             }}
                             className=" text-lg font-bold w-1/4 text-white p-2 rounded-full mx-auto my-4 hover:bg-blue-800 transition-all duration-200 ease-in-out"
                         >
-                            <FaFacebook size={32} className="mx-auto" />
+                            <FaFacebook size={22} className="mx-auto" />
                         </button>
                         <button
                             style={{
@@ -223,12 +236,14 @@ const TripleLogin = () => {
                             }}
                             className=" text-lg font-bold w-1/4 text-white p-2 rounded-full mx-auto my-4 hover:bg-blue-800 transition-all duration-200 ease-in-out"
                         >
-                            <FaTwitter size={32} className="mx-auto" />
+                            <FaTwitter size={22} className="mx-auto" />
                         </button>
                     </div>
                 </div>
             </div>
         </div>
+        </>
+       
     )
 }
 
