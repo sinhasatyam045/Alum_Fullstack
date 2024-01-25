@@ -19,9 +19,9 @@ function App() {
           <Route path="/feedback" element={<Feedback />} /> 
           <Route path="/notification" element={<Notification />} />  
           <Route path="/message" element={<MessageBoard />} />
-          <Route path="/login" element = {<TripleLogin />} />
-
-
+          <Route path="/home" element={<Home />} />  
+          <Route path="/" element = {<TripleLogin />} />
+            
         </Routes>
       </div>
     </Router>
