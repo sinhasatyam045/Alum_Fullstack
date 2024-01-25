@@ -6,8 +6,7 @@ import TripleLogin from './components/login/TripleLogin';
 import Approval_page from './components/admin/approval_page';
 import Feedback from './components/forms/feedbackForm'
 import MessageBoard from './components/message/messageBoard'
-import Home from './components/home/home';
-
+import SignUpPage from './components/login/SignUpPage';
 
 
 function App() {
@@ -16,16 +15,19 @@ function App() {
       <div>
         <Routes>
           <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/" element={<Login />} />
           <Route path="/approval" element={<Approval_page/>}/> 
+          <Route path="/" element={<Login />} />      
           <Route path="/feedback" element={<Feedback />} /> 
           <Route path="/notification" element={<Notification />} />  
-          <Route path="/messages" element={<MessageBoard />} />
-          <Route path="/" element={<Home />} />  
-          <Route path="/login" element = {<TripleLogin />} />
-            
+          <Route path="/message" element={<MessageBoard />} />
+          <Route path="/login" element = {<TripleLogin />}/>
+          <Route path="/signup" element={<SignUpPage />} />
+
         </Routes>
       </div>
     </Router>
+    
 
   );
 }
