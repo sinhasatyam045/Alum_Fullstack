@@ -13,7 +13,7 @@ const Dashboard = () => {
     }
 
     function handleMessageClick() {
-        navigate('/message');
+        navigate('/messages');
     };
 
     function handleNotificationClick() {

@@ -6,6 +6,7 @@ import TripleLogin from './components/login/TripleLogin';
 import Approval_page from './components/admin/approval_page';
 import Feedback from './components/forms/feedbackForm'
 import MessageBoard from './components/message/messageBoard'
+import Home from './components/home/home';
 
 
 
@@ -18,9 +19,9 @@ function App() {
           <Route path="/approval" element={<Approval_page/>}/> 
           <Route path="/feedback" element={<Feedback />} /> 
           <Route path="/notification" element={<Notification />} />  
-          <Route path="/message" element={<MessageBoard />} />
-          <Route path="/home" element={<Home />} />  
-          <Route path="/" element = {<TripleLogin />} />
+          <Route path="/messages" element={<MessageBoard />} />
+          <Route path="/" element={<Home />} />  
+          <Route path="/login" element = {<TripleLogin />} />
             
         </Routes>
       </div>
