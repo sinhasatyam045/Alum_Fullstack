@@ -22,6 +22,7 @@ function App() {
           <Route path="/messages" element={<MessageBoard />} />
           <Route path="/" element={<Home />} />  
           <Route path="/login" element = {<TripleLogin />} />
+          <Route path="/signup" element={<SignUpPage />} />
             
         </Routes>
       </div>
