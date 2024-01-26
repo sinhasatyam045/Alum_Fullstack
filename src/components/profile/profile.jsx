@@ -89,8 +89,8 @@ const profile = () => {
                     key={index}
                     className={`p-3 text-center rounded-lg mx-2 font-bold  flex-1 border-2 hover:font-bold hover:border-sky-800 ${
                       sectionIndex == index
-                        ? `border-sky-800 text-black`
-                        : `bg-transparent text-black dark:text-white rounded-lg`
+                        ? `border-sky-800 text-black bg-gray-200 hover:text-white`
+                        : `bg-transparent text-black hover:text-white dark:text-white rounded-lg`
                     }`}
                     onClick={() => setSectionIndex(index)}
                   >

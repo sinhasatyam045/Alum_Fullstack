@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
 import { FaFacebook, FaGoogle, FaTwitter } from 'react-icons/fa'
+import { useNavigate } from 'react-router-dom'
 // Important info for Backend Devs :
 
 // The handling between Faculty, Student or Alumni Login is decided by the variable activeUser
@@ -10,6 +11,7 @@ import { FaFacebook, FaGoogle, FaTwitter } from 'react-icons/fa'
 // activeUser = 3 : Alumni Login
 
 const SignUpPage = () => {
+    const navigate = useNavigate();
     const [activeUser, setactiveUser] = useState(1) 
     const [imageOpacity, setImageOpacity] = useState(100)
 
@@ -19,8 +21,12 @@ const SignUpPage = () => {
         setTimeout(() => setImageOpacity(1), 100)
     }
 
+    const handleRegisterClick = () => { 
+        navigate("/dashboard")
+    }
+
     return (
-        <div className="w-full h-full flex justify-center items-center">
+        <div className="w-full h-screen bg-indigo-100 flex justify-center items-center">
             <div className="flex  items-center justify-center w-full h-5/6 bg-indigo-100">
                 <div className="flex items-center align-center p-10 m-10">
                     {activeUser === 1 && (
@@ -61,7 +67,7 @@ const SignUpPage = () => {
                     )}
                 </div>
 
-                <div className="bg-white w-5/6 h-11/12  shadow-xl rounded-3xl p-7 m-10 flex flex-col items-center">
+                <div className="bg-white w-3/6 h-11/12  shadow-xl rounded-3xl p-7 m-10 flex flex-col items-center">
                     <div className="bg-blue-100 rounded-full w-5/6 flex justify-center relative">
                         {/* Sliding Button */}
                         <button
@@ -209,6 +215,7 @@ const SignUpPage = () => {
                                 boxShadow: '0 0 10px rgba(30, 58, 138, 0.7)',
                             }}
                             className=" text-lg font-bold w-1/3 text-white py-4 p-2 mb-8 rounded-full mx-auto my-4 hover:bg-blue-800 transition-all duration-200 ease-in-out"
+                            onClick={handleRegisterClick}
                         >
                             REGISTER
                         </button>

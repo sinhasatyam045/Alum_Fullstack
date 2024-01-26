@@ -11,7 +11,7 @@ const NavigationPanel = () => {
       <NavItem to="/messages" icon={<BiMessage />} label="Message" />
 
       <NavItem to="/saved" icon={<BiBookmark />} label="Saved Items" />
-      <NavItem to="/messages" icon={<BiFace />} label="Profile" />
+      <NavItem to="/profile" icon={<BiFace />} label="Profile" />
 
       <NavItem to="/events" icon={<BiCalendarEvent />} label="Events" />
       {/* Add more navigation items as needed */}

@@ -2,9 +2,12 @@ import React from "react";
 import Post from "../helper/post";
 import { useNavigate } from "react-router-dom";
 import Navbar from "../helper/navbar";
+import { useState } from "react";
+import Notification from "../notification/notification";
 
 const Dashboard = () => {
   const navigate = useNavigate();
+  const[comp,setComp]=useState("");
 
   function handleAdminClick() {
     navigate("/approval");
@@ -12,10 +15,14 @@ const Dashboard = () => {
 
   function handleMessageClick() {
     navigate("/messages");
+    
   }
 
   function handleNotificationClick() {
-    navigate("/notification");
+    // navigate("/notification");
+    setComp((prev)=>(prev==="notification"?"":"notification"));
+    console.log(comp);
+
   }
 
   function handleUpdateClick() {
@@ -28,9 +35,9 @@ const Dashboard = () => {
   return (
     <div className="overflow-hidden">
       <div className="w-full flex justify-between">
-        <div className="w-full px-16 bg-indigo-200 fixed">
+        {/* <div className="w-full px-16 bg-indigo-200 fixed">
           <Navbar />
-        </div>
+        </div> */}
         {/* Profile Section */}
         <div className="w-1/5 h-screen bg-indigo-200 p-4 flex flex-col items-center ">
           <div className="pb-20">
@@ -93,7 +100,8 @@ const Dashboard = () => {
         {/* Posts Section */}
         <div className="w-3/5 h-screen bg-gray-200 p-4 overflow-y-auto">
           {/* Example Post */}
-          <div className="w-4/5 mx-auto border overflow-y ">
+          
+          {comp !== "notification" && (<div className="w-4/5 mx-auto border overflow-y ">
             <Post
               username="John Doe"
               avatar="Images/profile.jpg"
@@ -129,6 +137,13 @@ const Dashboard = () => {
               comments={5}
             />
           </div>
+          )}
+
+          {comp === "notification" && (<div className="w-4/5 mx-auto border overflow-y">
+              <Notification />
+
+          </div>
+          )}
 
           {/* Add more posts as needed */}
         </div>
