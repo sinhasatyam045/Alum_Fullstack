@@ -7,6 +7,7 @@ import Approval_page from './components/admin/approval_page';
 import Feedback from './components/forms/feedbackForm'
 import MessageBoard from './components/message/messageBoard'
 import Home from './components/home/home';
+import SignUpPage from './components/login/SignUpPage';
 
 
 
