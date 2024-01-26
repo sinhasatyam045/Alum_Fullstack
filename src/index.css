@@ -1,6 +1,6 @@
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -17,14 +17,15 @@ a {
   color: #646cff;
   text-decoration: inherit;
 }
+
 a:hover {
   color: #535bf2;
 }
 
 body {
   margin: 0;
-  
- 
+  background-color: var(--body-bg);
+  color: var(--body-txt);
 }
 
 h1 {
@@ -41,9 +42,15 @@ button {
   font-family: inherit;
   background-color: #163560;
   cursor: pointer;
-  
+
 }
+
 button:hover {
-  
   filter: brightness(1.4);
+}
+
+
+.dark {
+  --body-bg: #060125;
+  --body-txt: white;
 }
