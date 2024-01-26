@@ -1,0 +1,17 @@
+@media (max-width:1060px) {
+    .user-profile-head {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 870px) {
+    .page_components {
+        flex-direction: column;
+    }
+
+    .page_components .profile_left_section,
+    .page_components .profile_right_section .request-box {
+        width: 100%;
+    }
+
+}
