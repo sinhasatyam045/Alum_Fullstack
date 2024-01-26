@@ -9,6 +9,9 @@ import MessageBoard from "./components/message/messageBoard";
 import Profile from "./components/profile/profile.jsx";
 import Home from './components/home/home';
 import SignUpPage from './components/login/SignUpPage';
+import ScreenOne from "./components/onBoardings/screenOne.jsx";
+import ScreenTwo from "./components/onBoardings/screenTwo.jsx";
+import ScreenThree from "./components/onBoardings/screenThree.jsx";
 
 
 
@@ -26,6 +29,10 @@ function App() {
           <Route path="/" element={<Home />} />  
           <Route path="/login" element = {<TripleLogin />} />
           <Route path="/signup" element={<SignUpPage />} />
+          <Route path="/signup" element={<SignUpPage />} />
+          <Route path="/onboarding1" element={<ScreenOne />} />
+          <Route path="/onboarding2" element={<ScreenTwo />} />
+          <Route path="/onboarding3" element={<ScreenThree />} />
             
         </Routes>
       </div>

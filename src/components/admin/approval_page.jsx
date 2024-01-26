@@ -10,45 +10,49 @@ import NavBar from '../helper/navbar';
 const approval_page = () => {
   return (
     <>
-      <div className='w-5/6 mx-auto'>
+      <div className='bg-indigo-100 h-screen'>
+        <div className='w-5/6  mx-auto'>
 
 
-        {/* <div className='w-full h-16 bg-blue-900'></div> */}
-        <div >
-          <NavBar></NavBar>
+          {/* <div className='w-full h-16 bg-blue-900'></div> */}
+          <div >
+            <NavBar></NavBar>
+          </div>
+          <div className='static'>
+            <img src={ellipse1} style={{ height: "500px" }} className='absolute top-15 right-0' />
+            <img src={ellipse2} style={{ height: "350px" }} className='absolute bottom-0 right-0' />
+            <img src={businessman} style={{ height: "350px" }} className='absolute top-28 right-12' />
+
+
+
+          </div>
+          <div className='px-24 pt-16'>
+
+
+            <div className='text-6xl text-gray-500 font-bold pb-6'>Approval Page</div>
+            <div className='text-4xl text-blue-900 font-semibold'>Alumni</div>
+
+            <div className='h-0.5 w-28 bg-black mb-10'></div>
+
+          </div>
+
+          <AlumniCards
+            regNo="2018B4A70633G"
+            UserName="johndoe"
+            DisplayName="John Doe"
+          />
+
+          <div className='flex justify-center pt-14'>
+
+            <img src={tick} alt='tickmark' className='h-10 w-24' />
+            <img src={tick} alt='tickmark' className='h-10 w-24' />
+            <img src={tick} alt='tickmark' className='h-10 w-24' />
+
+          </div>
         </div>
-        <div className='static'>
-          <img src={ellipse1} style={{ height: "500px" }} className='absolute top-15 right-0' />
-          <img src={ellipse2} style={{ height: "350px" }} className='absolute bottom-0 right-0' />
-          <img src={businessman} style={{ height: "350px" }} className='absolute top-28 right-12' />
 
-
-
-        </div>
-        <div className='px-24 pt-16'>
-
-
-          <div className='text-6xl text-gray-500 font-bold pb-6'>Approval Page</div>
-          <div className='text-4xl text-blue-900 font-semibold'>Alumni</div>
-
-          <div className='h-0.5 w-28 bg-black mb-10'></div>
-
-        </div>
-
-        <AlumniCards
-          regNo="2018B4A70633G"
-          UserName="johndoe"
-          DisplayName="John Doe"
-        />
-
-        <div className='flex justify-center pt-14'>
-
-          <img src={tick} alt='tickmark' className='h-10 w-24' />
-          <img src={tick} alt='tickmark' className='h-10 w-24' />
-          <img src={tick} alt='tickmark' className='h-10 w-24' />
-
-        </div>
       </div>
+
     </>
   )
 }
