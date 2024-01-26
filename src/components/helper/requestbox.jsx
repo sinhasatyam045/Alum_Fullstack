@@ -32,7 +32,7 @@ const requestbox = () => {
     },
   ];
   return (
-    <div className="request-box bg-[#204C89] text-white text-[12px] rounded p-[2rem] w-[320px]">
+    <div className="request-box bg-sky-800 text-white text-[12px] rounded-lg p-[2rem] w-[320px]">
       <div className="request-box-head border-[#17171733] border-b-4 py-4 flex">
         <span className="uppercase me-auto">Requests</span>
         <button className="p-0 bg-transparent uppercase hover:font-bold">
@@ -62,10 +62,10 @@ const requestbox = () => {
                 </div>
               </div>
               <div className="req-action flex gap-4 text-[14px]">
-                <button className="rounded p-2 bg-green-500">
+                <button className="rounded-full p-2 bg-green-500">
                   <FaCheck />
                 </button>
-                <button className="rounded p-2 bg-red-500">
+                <button className="rounded-full p-2 bg-red-500">
                   <ImCross />
                 </button>
               </div>

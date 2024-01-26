@@ -22,34 +22,35 @@ const profile = () => {
   const navigate = useNavigate();
   return (
     <>
-      <section className=" relative profile_page_container min-h-screen">
+      <section className=" relative profile_page_container bg-indigo-100 min-h-screen">
         {/* Navbar */}
-        <section className=" w-full px-16 bg-transparent">
+        <section className=" w-full  bg-transparent">
           <Navbar />
         </section>
         {/* Profile Page container */}
+        <div className="lg:w-5/6 lg:pl-12 w-full mx-auto ">
         <main className="mx-[3%] my-[1rem] min-h-[80vh]">
-          <button
+          {/* <button
             className="back_btn text-[2rem] p-0 text-black bg-transparent dark:text-white "
             onClick={() => navigate("/dashboard")}
           >
             <IoMdArrowRoundBack />
-          </button>
-          <div className="page_components h-full flex">
-            <section className=" h-full profile_left_section w-[70%] py-[2rem] flex flex-col gap-[3rem] ">
+          </button> */}
+          <div className="page_components h-full flex py-[2rem]">
+            <section className=" h-full rounded-xl p-4 bg-gray-100 profile_left_section w-[70%]  flex flex-col gap-[3rem] ">
               <div className="bg-img relative">
                 <img
                   src={currentUser.coverImg}
                   alt="Cover"
                   width="100%"
-                  className="h-[180px]"
+                  className="h-[180px] rounded-lg"
                 />
                 <div className="absolute top-5 right-5 edit-options flex w-fit ml-auto gap-4">
-                  <button className="profile-control-options p-2 uppercase rounded bg-[#0D0D0D99] flex justify-between items-center hover:bg-[#0b72da24] ml-auto text-white ">
+                  <button className="profile-control-options py-2 px-3 rounded-full bg-[#0D0D0D99] flex justify-between items-center hover:bg-[#0b72da24] ml-auto text-white ">
                     <FaRegEdit />
-                    <span className="px-2 pr-6">Edit Profle</span>
+                    <span className="px-2">Edit Profle</span>
                   </button>
-                  <button className="profile-control-options p-2 uppercase rounded bg-[#0D0D0D99] flex justify-between items-center hover:bg-[#0b72da24] ml-auto text-white">
+                  <button className="profile-control-options py-2 px-3 rounded-full bg-[#0D0D0D99] flex justify-between items-center hover:bg-[#0b72da24] ml-auto text-white">
                     <SlOptionsVertical />
                   </button>
                 </div>
@@ -70,25 +71,26 @@ const profile = () => {
                       <span>City, country</span>
                     </div>
                   </h1>
-                  <p className="texxt-[14px]">{currentUser.userTitle}</p>
-                  <div className="user_misc_details flex items-center gap-2 uppercase font-semibold text-center">
-                    <div className="contact_info bg-[#0B73DA]  text-[0.8rem] sm:text-[1rem] sm:px-8 p-2 rounded cursor-pointer">
+                  <p className="text-[14px]">{currentUser.userTitle}</p>
+                  <div className="user_misc_details flex items-center gap-2 font-semibold text-center">
+                    <div className="contact_info bg-sky-800 text-gray-200  text-[0.8rem] sm:text-[1rem] sm:px-8 p-2 rounded-lg cursor-pointer">
                       Contact Info
                     </div>
-                    <div className="contact_info bg-black text-[#0B73DA]  text-[0.8rem] sm:text-[1rem] sm:px-8 p-2 rounded cursor-pointer">
+                    <div className="contact_info  border-2 text-sky-800  text-[0.8rem] sm:text-[1rem] sm:px-8 p-2 rounded-lg cursor-pointer">
                       {currentUser.connections} Connections
                     </div>
                   </div>
                 </div>
               </section>
-              <div className="user-head-controls border-[#25252533] border-b-2 flex">
+              <hr className="bg-gray-900"/>
+              <div className="user-head-controls flex">
                 {controlBtns.map((btn, index) => (
                   <button
                     key={index}
-                    className={`p-6 text-center rounded font-bold rounded-b-none flex-1 border-[#25252533] border-r-2 hover:font-bold hover:bg-[#0b72da78] ${
+                    className={`p-3 text-center rounded-lg mx-2 font-bold  flex-1 border-2 hover:font-bold hover:border-sky-800 ${
                       sectionIndex == index
-                        ? `bg-[#0B73DA]`
-                        : `bg-transparent text-black dark:text-white`
+                        ? `border-sky-800 text-black`
+                        : `bg-transparent text-black dark:text-white rounded-lg`
                     }`}
                     onClick={() => setSectionIndex(index)}
                   >
@@ -96,6 +98,7 @@ const profile = () => {
                   </button>
                 ))}
               </div>
+              
               {sections[sectionIndex]}
             </section>
             <section className="h-full profile_right_section flex-1 md:pl-[1rem]">
@@ -103,6 +106,9 @@ const profile = () => {
             </section>
           </div>
         </main>
+
+        </div>
+       
       </section>
     </>
   );

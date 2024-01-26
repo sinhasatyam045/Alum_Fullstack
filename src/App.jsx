@@ -21,7 +21,7 @@ function App() {
           <Route path="/approval" element={<Approval_page />} />
           <Route path="/feedback" element={<Feedback />} />
           <Route path="/notification" element={<Notification />} />
-          <Route path="/message" element={<MessageBoard />} />
+          <Route path="/messages" element={<MessageBoard />} />
           <Route path="/profile" element={<Profile />} />  
           <Route path="/" element={<Home />} />  
           <Route path="/login" element = {<TripleLogin />} />
