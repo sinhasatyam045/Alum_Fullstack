@@ -21,7 +21,7 @@ function Home() {
       </div>
 
       <div className="mt-12  mx-auto flex flex-col gap-24 sm:flex-row pl-8">
-        <div className="flex flex-col">
+        <div className="w-1/3 flex flex-col">
           <div className="flex flex-col justify-center items-center mx-auto">
             <div className="w-80 h-40 bg-white rounded-lg overflow-hidden flex items-center justify-center">
               <p className="text-5xl font-bold" style={{ color: "#1E3C4E" }}>
@@ -36,42 +36,42 @@ function Home() {
               </button>
             </div>
             <div className="flex w-2/3 m-3 mt-8 ">
-                        <button
-                            className=" text-lg font-bold w-1/4 text-white p-2 rounded-full mx-auto my-4 hover:bg-blue-900 transition-all duration-200 ease-in-out"
-                        >
-                            <FaGoogle size={22} className="mx-auto m-3" />
-                        </button>
-                        <button
-                            className=" text-lg font-bold w-1/4 text-white p-2 rounded-full mx-auto my-4 hover:bg-blue-800 transition-all duration-200 ease-in-out"
-                        >
-                            <FaFacebook size={22} className="mx-auto " />
-                        </button>
-                        <button
-                            className=" text-lg font-bold w-1/4 text-white p-2 rounded-full mx-auto my-4 hover:bg-blue-800 transition-all duration-200 ease-in-out"
-                        >
-                            <FaTwitter size={22} className="mx-auto" />
-                        </button>
-                    </div>
+              <button
+                className=" text-lg font-bold w-1/4 text-white p-2 rounded-full mx-auto my-4 hover:bg-blue-900 transition-all duration-200 ease-in-out"
+              >
+                <FaGoogle size={22} className="mx-auto m-3" />
+              </button>
+              <button
+                className=" text-lg font-bold w-1/4 text-white p-2 rounded-full mx-auto my-4 hover:bg-blue-800 transition-all duration-200 ease-in-out"
+              >
+                <FaFacebook size={22} className="mx-auto " />
+              </button>
+              <button
+                className=" text-lg font-bold w-1/4 text-white p-2 rounded-full mx-auto my-4 hover:bg-blue-800 transition-all duration-200 ease-in-out"
+              >
+                <FaTwitter size={22} className="mx-auto" />
+              </button>
+            </div>
 
           </div>
-          
 
-          
+
+
         </div>
 
-        <div className="h-full">
+        <div className="w-1/3 h-full ">
           <img
             loading="lazy"
             src={img}
-            className="aspect-[1.3] w-96 object-contain object-center w-full overflow-hidden"
+            className="h-96 object-contain object-center overflow-hidden"
           />
         </div>
 
-        <div className="flex flex-col mt-4 ">
-          <h1 className="w-[302px] text-center text-white text-md font-bold font-['Poppins'] leading-10">
+        <div className="w-1/3 flex flex-col mt-4 ">
+          <h1 className=" text-center text-white text-md font-bold font-['Poppins'] leading-10">
             ABOUT
           </h1>
-          <p className="mt-8 w-96 text-gray-400 text-center text-white">
+          <p className="mt-8 w-96 text-center text-white">
             Established in 2002 , Pragyan is one
             of the finest schools of Noida -
             Greater Noida. Set on a beautiful
@@ -94,7 +94,7 @@ function Home() {
 
             environment.
           </p>
-       
+
         </div>
       </div>
     </div>
