@@ -22,7 +22,7 @@ const profile = () => {
   const navigate = useNavigate();
   return (
     <>
-      <section className=" relative profile_page_container bg-indigo-100 min-h-screen">
+      <section className=" relative profile_page_container bg-indigo-100 dark:bg-[#1f2e44] min-h-screen">
         {/* Navbar */}
         <section className=" w-full  bg-transparent">
           <Navbar />
@@ -37,7 +37,7 @@ const profile = () => {
             <IoMdArrowRoundBack />
           </button> */}
           <div className="page_components h-full flex py-[2rem]">
-            <section className=" h-full rounded-xl p-4 bg-gray-100 profile_left_section w-[70%]  flex flex-col gap-[3rem] ">
+            <section className=" h-full rounded-xl p-4 bg-gray-100 dark:bg-gray-900 profile_left_section w-[70%]  flex flex-col gap-[3rem] ">
               <div className="bg-img relative">
                 <img
                   src={currentUser.coverImg}

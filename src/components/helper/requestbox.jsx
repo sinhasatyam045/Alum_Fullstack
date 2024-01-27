@@ -32,7 +32,7 @@ const requestbox = () => {
     },
   ];
   return (
-    <div className="request-box bg-sky-800 text-white text-[12px] rounded-lg p-[2rem] w-[320px]">
+    <div className="request-box bg-sky-800 dark:bg-gray-900 text-white text-[12px] rounded-lg p-[2rem] w-[320px]">
       <div className="request-box-head border-[#17171733] border-b-4 py-4 flex">
         <span className="uppercase me-auto">Requests</span>
         <button className="p-0 bg-transparent uppercase hover:font-bold">

@@ -7,7 +7,7 @@ import { BiHome, BiBookmark, BiMessage, BiCalendarEvent, BiFace } from 'react-ic
 const NavigationPanel = () => {
   return (
     <div className="flex flex-col items-start ">
-      <NavItem to="/" icon={<BiHome />} label="Home" />
+      <NavItem to="/dashboard" icon={<BiHome />} label="Home" />
       <NavItem to="/messages" icon={<BiMessage />} label="Message" />
 
       <NavItem to="/saved" icon={<BiBookmark />} label="Saved Items" />
