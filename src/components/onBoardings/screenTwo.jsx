@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 const ScreenTwo = () => {
     const Navigate = useNavigate();
     const handleNextClick = () => {
-        Navigate('/login');
+        Navigate('/onboarding3');
     }
     const handleSkipClick =  () => {
         Navigate('/login');

@@ -2,8 +2,8 @@ import React from "react";
 
 const FeedbackForm = () => {
   return (
-    <section className="feedback">
-      <div className="grid grid-rows-1 h-auto md:h-90">
+    <section className="h-screen bg-[#1f2e44]">
+      <div className="grid grid-rows-1 h-screen justify-center items-center md:h-90">
         <div className="grid grid-cols-1 md:grid-cols-2">
           <div className="container type1" style={{ backgroundColor: "#1E2D43" }}>
             <div className="mt-20 text-center">
@@ -157,7 +157,7 @@ const FeedbackForm = () => {
             <span className="ml-2 font-semibold">send me occasional promotional emails</span>
         </label>
                     <div className="p-2 w-full">
-                      <button className="flex mx-auto text-white bg-inherit border-0 py-2 px-8 focus:outline-none  rounded text-lg">
+                      <button className="flex mx-auto bg-[#1f2e44] text-white  border-0 py-2 px-8 focus:outline-none  rounded text-lg">
                         Submit feedback
                       </button>
                     </div>

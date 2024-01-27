@@ -4,6 +4,7 @@ import img4 from "../../../public/Images/background.png"
 import { FaFacebook, FaGoogle, FaTwitter } from 'react-icons/fa'
 
 import { useNavigate } from "react-router-dom";
+import Navbar from "../helper/navbar";
 
 function Home() {
   const navigate = useNavigate();
@@ -11,7 +12,11 @@ function Home() {
     navigate("/onboarding1");
   }
   return (
-    <div
+    <>
+      <div>
+        <Navbar />
+      </div>
+      <div
       className="flex flex-col sm:flex-col "
       style={{ backgroundColor: "#1E2D43" }}
     >
@@ -98,6 +103,8 @@ function Home() {
         </div>
       </div>
     </div>
+    </>
+    
   );
 }
 
