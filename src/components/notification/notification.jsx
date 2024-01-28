@@ -1,22 +1,51 @@
-import React from 'react';
+import React, { useState } from "react";
+import { FiBell } from "react-icons/fi"; // Import notification bell icon
+import SchoolLogo from "../../assets/images/message/Linkbkj.png"; // Replace with the path to your school logo
+import ProfilePicture from "../../assets/images/message/profile.png"; // Replace with the path to your profile picture
+import tick from "../../../public/Images/tick-mark.png";
+import cross from "../../../public/Images/remove.png"
+
 
 const Notification = () => {
   // Sample data (replace with actual data from your application)
-  const userProfile = 'Images/profile.jpg';
-  const userName = 'John Doe';
+  const userProfile = "Images/profile.jpg";
+  const userName = "John Doe";
   const notificationData = [
-    { id: 1, message: 'liked your photo', actionButtons: ['View', 'Dismiss'] },
-    { id: 2, message: 'started following you', actionButtons: ['Follow Back', 'Dismiss'] },
-    { id: 3, message: 'liked your photo', actionButtons: ['View', 'Dismiss'] },
-    { id: 4, message: 'liked your photo', actionButtons: ['View', 'Dismiss'] },
-    { id: 5, message: 'liked your photo', actionButtons: ['View', 'Dismiss'] },
-    { id: 6, message: 'started following you', actionButtons: ['View', 'Dismiss'] },
-    { id: 7, message: 'liked your photo', actionButtons: ['Follow Back', 'Dismiss'] },
-    { id: 8, message: 'liked your photo', actionButtons: ['Follow Back', 'Dismiss'] },
-    { id: 9, message: 'liked your photo', actionButtons: ['View', 'Dismiss'] },
-    { id: 20, message: 'started following you', actionButtons: ['View', 'Dismiss'] },
-    { id: 11, message: 'started following you', actionButtons: ['View', 'Dismiss'] },
-
+    { id: 1, message: "liked your photo", actionButtons: ["View", "Dismiss"] },
+    {
+      id: 2,
+      message: "started following you",
+      actionButtons: ["Follow Back", "Dismiss"],
+    },
+    { id: 3, message: "liked your photo", actionButtons: ["View", "Dismiss"] },
+    { id: 4, message: "liked your photo", actionButtons: ["View", "Dismiss"] },
+    { id: 5, message: "liked your photo", actionButtons: ["View", "Dismiss"] },
+    {
+      id: 6,
+      message: "started following you",
+      actionButtons: ["View", "Dismiss"],
+    },
+    {
+      id: 7,
+      message: "liked your photo",
+      actionButtons: ["Follow Back", "Dismiss"],
+    },
+    {
+      id: 8,
+      message: "liked your photo",
+      actionButtons: ["Follow Back", "Dismiss"],
+    },
+    { id: 9, message: "liked your photo", actionButtons: ["View", "Dismiss"] },
+    {
+      id: 20,
+      message: "started following you",
+      actionButtons: ["View", "Dismiss"],
+    },
+    {
+      id: 11,
+      message: "started following you",
+      actionButtons: ["View", "Dismiss"],
+    },
   ];
 
   const handleAction = (id, action) => {
@@ -25,34 +54,90 @@ const Notification = () => {
   };
 
   return (
-    <div className=" mx-auto bg-white rounded-md overflow-hidden shadow-md p-6">
-        <div className="mt-2">
-        <h3 className="text-2xl font-semibold mb-4">Notifications</h3>
-        <hr />
+    <div>
 
-        {notificationData.map((notification) => (
-          <div key={notification.id} className="flex items-center justify-between border-b py-4">
-            <div className="flex items-center space-x-4">
-              <img src={userProfile} alt="Notification User" className="w-10 h-10 rounded-full" />
-              <div>
-                <p>
-                  <span className="font-bold">{userName}</span> {notification.message}
-                </p>
-              </div>
-            </div>
-            <div className="flex space-x-2">
-              {notification.actionButtons.map((actionButton, index) => (
-                <button
-                  key={index}
-                  onClick={() => handleAction(notification.id, actionButton)}
-                  className="text-gray-200 hover:underline focus:outline-none"
-                >
-                  {actionButton}
-                </button>
-              ))}
+
+      <div
+        style={{ backgroundColor: "rgb(22, 53, 96)" }}
+        className="p-3 flex items-center justify-between"
+      >
+        <div className="flex items-center bg-white">
+          <img
+            src={SchoolLogo}
+            alt="School Logo"
+            className=" h-8 object-cover mr-4"
+          />
+        </div>
+        <div className="flex items-center">
+          <FiBell className="text-white mr-4 cursor-pointer" />
+          <div className="flex items-center">
+            <div className="overflow-hidden">
+              <img
+                src={ProfilePicture}
+                alt="Profile"
+                className="h-12 w-30 object-cover"
+              />
             </div>
           </div>
-        ))}
+        </div>
+      </div>
+
+
+      <div className=" mx-auto bg-white rounded-md overflow-hidden shadow-md p-6">
+        <div className="mt-2">
+          <h3 className="text-2xl font-semibold mb-4">Notifications</h3>
+          <hr />
+
+          {notificationData.map((notification) => (
+            <div
+              key={notification.id}
+              className="flex items-center justify-between border-b py-4"
+            >
+              <div className="flex items-center space-x-4">
+                <img
+                  src={userProfile}
+                  alt="Notification User"
+                  className="w-10 h-10 rounded-full"
+                />
+                <div>
+                  <p>
+                    <span className="font-bold">{userName}</span>{" "}
+                    {notification.message}
+                  </p>
+                  <div className="py-1 flex">
+                    <button className="bg-slate-500 w-15 py-0.5">View</button>
+                    <p className="mx-20">(3 mins)</p>
+                  </div>
+                </div>
+              </div>
+
+
+
+
+              <div className="flex space-x-2">
+                <div className="flex mr-12 w-24 py-2">
+                  <img className="px-5" src={tick} alt="" />
+                  <img src={cross} alt="" />
+                </div>
+
+
+
+
+
+
+                {notification.actionButtons.map((actionButton, index) => (
+                  <button
+                    key={index}
+                    onClick={() => handleAction(notification.id, actionButton)}
+                    className="text-gray-200 hover:underline focus:outline-none"
+                  >
+                    {actionButton}
+                  </button>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
