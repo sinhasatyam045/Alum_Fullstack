@@ -10,7 +10,7 @@ const ScreenOne = () => {
     }
     return (
         <>
-        <div className='h-screen overflow-hidden'>
+        <div className='h-screen '>
         <Navbar />
          <div className='w-full h-screen text-gray-100 bg-[#1f2e44] overflow-hidden'>
            

@@ -11,7 +11,7 @@ const ScreenThree = () => {
         Navigate('/login');
     }
     return (
-        <div className='bg-[#1f2e44] h-screen overflow-hidden'>
+        <div className='bg-[#1f2e44] h-full '>
             <div className='flex flex-col gap-4 w-3/5 mx-auto items-center justify-center p-8'>
                 <h2 className='text-gray-200 font-bold text-4xl'>
                     Showcase your Journey
