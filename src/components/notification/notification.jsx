@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { FiBell } from "react-icons/fi"; // Import notification bell icon
-import SchoolLogo from "../../assets/images/message/Linkbkj.png"; // Replace with the path to your school logo
+import SchoolLogo from "../../assets/images/message/Schoollogo.png"; // Replace with the path to your school logo
 import ProfilePicture from "../../assets/images/message/profile.png"; // Replace with the path to your profile picture
 import tick from "../../../public/Images/tick-mark.png";
 import cross from "../../../public/Images/remove.png";
