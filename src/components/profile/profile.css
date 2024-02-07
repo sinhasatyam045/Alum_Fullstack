@@ -13,5 +13,12 @@
     .page_components .profile_right_section .request-box {
         width: 100%;
     }
+}
 
+@media (max-width: 500px) {
+    .experience_list .exp_container {
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem 0;
+    }
 }
