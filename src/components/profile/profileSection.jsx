@@ -10,7 +10,7 @@ const ProfileSection = () => {
         <h2 className="text-[18px] font-bold">About</h2>
         <p>{currentUser.userDesc}</p>
       </div>
-      <hr className="bg-gray-900"/>
+      <hr className="bg-gray-900" />
       <div className="project_section px-[2rem]">
         <h2 className="text-[18px] font-bold">
           Projects
@@ -53,7 +53,7 @@ const ProfileSection = () => {
           Show ALL ({projects.length})
         </button>
       </div>
-      <hr className="bg-gray-900"/>
+      <hr className="bg-gray-900" />
       <div className="skills_section px-[2rem]">
         <h2 className="text-[18px] font-bold">Skills</h2>
         <div className="skills_list my-4 flex flex-wrap gap-4">
@@ -76,7 +76,7 @@ const ProfileSection = () => {
           Show ALL ({skills.length})
         </button>
       </div>
-      <hr className="bg-gray-900"/>
+      <hr className="bg-gray-900" />
       <div className="experience_section px-[2rem]">
         <h2 className="text-[18px] font-bold">Experience</h2>
         <div className="experience_list my-4 flex flex-col gap-4">
