@@ -1,7 +1,7 @@
 import React from "react";
 import Post from "../helper/post";
 import { useNavigate } from "react-router-dom";
-import Navbar from "../helper/navbar";
+import DashBoardNavBar from "../helper/DashBoardNavBar"
 import { useState } from "react";
 import Notification from "../notification/notification";
 
@@ -11,6 +11,10 @@ const Dashboard = () => {
 
   function handleAdminClick() {
     navigate("/approval");
+  }
+
+  function handleAdminDashboardClick() {
+    navigate("/admindashboard");
   }
 
   function handleMessageClick() {
@@ -34,15 +38,18 @@ const Dashboard = () => {
   }
   return (
     <div className="overflow-hidden">
+      <div>
+      <DashBoardNavBar />
+      </div>
       <div className="w-full flex justify-between">
         {/* <div className="w-full px-16 bg-indigo-200 fixed">
           <Navbar />
         </div> */}
         {/* Profile Section */}
         <div className="w-1/5 h-screen bg-indigo-200 p-4 flex flex-col items-center ">
-          <div className="pb-20">
+          {/* <div className="pb-20">
             <img src="Images/logo.png" alt="" />
-          </div>
+          </div> */}
           <div className="mb-4">
             <img
               src="Images/profile.jpg"
@@ -91,6 +98,14 @@ const Dashboard = () => {
                   onClick={handleAdminClick}
                 >
                   <div>Admin Login</div> 🧑🏻‍💼
+                </button>
+              </li>
+              <li>
+                <button
+                  className="flex justify-between w-full bg-blue-900 hover:bg-blue-700 text-white px-4 py-2 rounded-xl focus:outline-none"
+                  onClick={handleAdminDashboardClick}
+                >
+                  <div>Admin Dashboard</div> 🧑🏻‍💼
                 </button>
               </li>
             </ul>
