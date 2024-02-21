@@ -2,10 +2,9 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import useScreenSize from "../../utils/useScreenSize";
 
-function DashBoardNavBar() {
+function DashBoardNavBar({ opened, setOpened, setComp }) {
   const navigate = useNavigate();
   const screenSize = useScreenSize();
-  const [opened, setOpened] = useState("home");
   return (
     <header className="flex justify-between">
       <div className="flex">
@@ -58,7 +57,17 @@ function DashBoardNavBar() {
       {screenSize.width < 820 && (
         <div>
           <ul className="flex justify-center">
-            <li className="p-1" onClick={() => setOpened("notifications")}>
+            <li
+              className="p-1"
+              onClick={() => {
+                setOpened((prev) =>
+                  prev === "notifications" ? "" : "notifications"
+                );
+                setComp((prev) =>
+                  prev === "notification" ? "" : "notification"
+                );
+              }}
+            >
               <div className="p-2 center relative">
                 <div className="flex justify-center p-1">
                   {opened === "notifications" ? (
@@ -202,7 +211,13 @@ function DashBoardNavBar() {
               )}
             </li>
 
-            <li className="px-1" onClick={() => setOpened("messages")}>
+            <li
+              className="px-1"
+              onClick={() => {
+                setOpened("messages");
+                navigate("/messages");
+              }}
+            >
               <div
                 className="p-2 center relative"
                 style={{
@@ -295,7 +310,17 @@ function DashBoardNavBar() {
               )}
             </li>
 
-            <li className="px-1" onClick={() => setOpened("notifications")}>
+            <li
+              className="px-1"
+              onClick={() => {
+                setOpened((prev) =>
+                  prev === "notifications" ? "" : "notifications"
+                );
+                setComp((prev) =>
+                  prev === "notification" ? "" : "notification"
+                );
+              }}
+            >
               <div className="p-2 center relative">
                 <div className="flex  justify-center">
                   {opened === "notifications" ? (
