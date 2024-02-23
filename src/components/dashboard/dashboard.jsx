@@ -69,7 +69,7 @@ const Dashboard = () => {
             </div>
             {/* Navigation Menu */}
             <div className="mt-4 w-4/5">
-              <ul className="text-white space-y-2">
+              <ul className="text-white space-y-2 text-sm md:text-md lg:text-lg ">
                 <li>
                   <button
                     className="flex justify-between w-full bg-blue-900 hover:bg-blue-700 text-white px-4 py-2 rounded-xl focus:outline-none"
