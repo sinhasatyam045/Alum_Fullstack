@@ -14,6 +14,7 @@ const TripleLogin = () => {
     const [activeUser, setactiveUser] = useState(1) //default set to Student
     const [imageOpacity, setImageOpacity] = useState(100)
     const navigate = useNavigate();
+    
 
     const handleButtonClick = (buttonNumber) => {
         setactiveUser(buttonNumber)
