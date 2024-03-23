@@ -1,156 +1,246 @@
-import React from 'react'
-import NavBar from '../../helper/navbar';
+import NavBar from "../../helper/navbar";
+import { useState } from "react";
+import useScreenSize from "../../../utils/useScreenSize";
+
+const tableData = [
+  {
+    Sr_No: "1",
+    Name: "Navin",
+    Reg_No: "21bce3310",
+    DOR: "12/12/12",
+    Username: "nvnie123",
+  },
+  {
+    Sr_No: "1",
+    Name: "Navin",
+    Reg_No: "21bce3310",
+    DOR: "12/12/12",
+    Username: "nvnie123",
+  },
+  {
+    Sr_No: "1",
+    Name: "Navin",
+    Reg_No: "21bce3310",
+    DOR: "12/12/12",
+    Username: "nvnie123",
+  },
+  {
+    Sr_No: "1",
+    Name: "Navin",
+    Reg_No: "21bce3310",
+    DOR: "12/12/12",
+    Username: "nvnie123",
+  },
+  {
+    Sr_No: "1",
+    Name: "Navin",
+    Reg_No: "21bce3310",
+    DOR: "12/12/12",
+    Username: "nvnie123",
+  },
+  {
+    Sr_No: "1",
+    Name: "Navin",
+    Reg_No: "21bce3310",
+    DOR: "12/12/12",
+    Username: "nvnie123",
+  },
+  {
+    Sr_No: "1",
+    Name: "Navin",
+    Reg_No: "21bce3310",
+    DOR: "12/12/12",
+    Username: "nvnie123",
+  },
+  {
+    Sr_No: "1",
+    Name: "Navin",
+    Reg_No: "21bce3310",
+    DOR: "12/12/12",
+    Username: "nvnie123",
+  },
+];
+
+const QueryComponent = () => {
+  return (
+    <div className="pt-9">
+      <div className=" bg-slate-300 rounded-xl px-6  m-0 text-blue-900 p-2  font-extrabold">
+        Queries and Complaints
+        <div>
+          <ul>
+            <li className="text-black py-3 pt-6 font-semibold">
+              - Regarding portal technicalities
+            </li>
+            <li className="text-black py-3 font-semibold">
+              - Annual day delay announcement
+            </li>
+            <li className="text-black py-3 font-semibold">
+              - Exam dates postponement due to annual day celebrations
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  );
+};
 
 const adminDashboard = () => {
+  const screenSize = useScreenSize();
+  const [selectedButton, setSelectedButton] = useState(0);
   return (
     <>
-    <div className='bg-indigo-100 h-screen'>
-        <div className='w-5/6  mx-auto'>
-            <div >
-                <NavBar></NavBar>
-            </div>
-            <div className='flex pt-4'>
-
-                <div className='text-6xl text-gray-500 font-bold pb-6 pt-4 '>
-                    Dashboard
-                    <div className='flex justify-evenly'>
-                        <div className='pt-5 pr-10'><button className=' text-[25px] h-16 rounded-full w-[250px]'>Student</button></div>
-                        <div className='pt-5 px-10'><button className='text-[25px] h-16  rounded-full w-[250px]'>Faculty</button></div>
-                        <div className='pt-5 pl-10 pr-20'><button className='text-[25px] h-16  rounded-full w-[250px]'>Alumni</button></div>
+      <div>
+        <NavBar></NavBar>
+      </div>
+      <div className="bg-indigo-100 lg:h-screen h-full">
+        <div className="w-11/12  mx-auto">
+          <div className="flex pt-4">
+            <div className="text-6xl  text-gray-500 font-bold pb-7 pt-4 w-11/12">
+              Dashboard
+              <div className="flex justify-evenly text-2xl">
+                <ul className="flex lg:gap-16 md:gap-10 gap-3 py-4">
+                  <li
+                    onClick={() => setSelectedButton(0)}
+                    className={`${
+                      selectedButton === 0
+                        ? "bg-[#163560] text-white"
+                        : "text-black"
+                    } rounded-full lg:px-14 md:px-10 px-6 py-1 border-2 border-black`}
+                  >
+                    Student
+                  </li>
+                  <li
+                    onClick={() => setSelectedButton(1)}
+                    className={`${
+                      selectedButton === 1
+                        ? "bg-[#163560] text-white"
+                        : "text-black"
+                    } rounded-full lg:px-14 md:px-10 px-6 py-1 border-2 border-black`}
+                  >
+                    Faculty
+                  </li>
+                  <li
+                    onClick={() => setSelectedButton(2)}
+                    className={`${
+                      selectedButton === 2
+                        ? "bg-[#163560] text-white"
+                        : "text-black"
+                    } rounded-full lg:px-14 md:px-10 px-6 py-1 border-2 border-black`}
+                  >
+                    Alumni
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <div className=" flex  w-1/2 h-1 text-white ">
+                  <form className="relative ">
+                    <div
+                      className=""
+                      style={{
+                        position: "absolute",
+                        left: "10px",
+                        top: "38px",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                      }}
+                    >
+                      <svg
+                        width="14"
+                        height="14"
+                        viewBox="0 0 14 14"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M9.02317 9.58741C8.0922 10.3237 6.91128 10.764 5.62633 10.764C2.62093 10.764 0.18457 8.35531 0.18457 5.38398C0.18457 2.41265 2.62093 0.00390625 5.62633 0.00390625C8.63173 0.00390625 11.0681 2.41265 11.0681 5.38398C11.0681 6.6542 10.6228 7.82162 9.87823 8.74199L13.3229 12.2695C13.559 12.5029 13.559 12.8814 13.3229 13.1149C13.0868 13.3483 12.7039 13.3483 12.4678 13.1149L9.02317 9.58741ZM1.39385 5.38398C1.39385 3.07294 3.2888 1.19948 5.62633 1.19948C7.96387 1.19948 9.85881 3.07294 9.85881 5.38398C9.85881 6.5116 9.40767 7.53505 8.6741 8.28753C8.65365 8.30312 8.63398 8.32018 8.61524 8.33871C8.59648 8.35725 8.57922 8.37671 8.56344 8.39694C7.80231 9.12234 6.76702 9.56847 5.62633 9.56847C3.2888 9.56847 1.39385 7.69501 1.39385 5.38398Z"
+                          fill="#FFFFFF"
+                        />
+                      </svg>
                     </div>
-                    <form>
-                        <label>
-                            <input className='text-[20px] rounded-full' placeholder='Enter Name' type="text" name="name" />
-                        </label>
-                    </form>
-                </div>   
-                <div className=' bg-slate-300 rounded-xl p-6  m-0 text-blue-900 pt-8 font-extrabold'>Queries and Complaints
-                    <div>
-                        <ul>
-                            <li className='text-black py-3 pt-6 font-semibold'> 
-                                - Regarding portal technicalities
-                            </li>
-                            <li className='text-black py-3 font-semibold'>
-                               - Annual day delay announcement
-                            </li>
-                            <li className='text-black py-3 font-semibold'>
-                               - Exam dates postponement due to annual day celebrations
-                            </li>
-                        </ul>
-                    </div>
+                    <input
+                      className="text-[20px] rounded-full p-2 bg-[#163560] text-white placeholder-white"
+                      style={{
+                        padding: "5px 10px 5px 35px",
+                      }}
+                      placeholder="Enter Name"
+                      type="text"
+                    />
+                  </form>
                 </div>
+              </div>
             </div>
+            {screenSize.width > 900 && <QueryComponent />}
+          </div>
+          {screenSize.width < 900 && <div className="p-5"></div>}
 
-    <div className='pt-10'>
-    <table>
-        <thead>
-          <tr>
-            <th className=' pt- 10 pr-14 border text-lg font-semibold min-w-[30px] text-black'>S.No</th>
-            <th className=' pt- 10 px-20 border text-lg font-semibold min-w-[30px] text-black'>Name</th>
-            <th className=' pt- 10 px-20 border text-lg font-semibold min-w-[30px] text-black'>Reg No.</th>
-            <th className=' pt- 10 px-20 border text-lg font-semibold min-w-[30px] text-black'>Date of Registration</th>
-            <th className=' pt- 9 px-20 10border text-lg font-semibold min-w-[30px] text-black'>Username</th>
-          </tr>
-        </thead>
-        <tbody>
-            
-        </tbody>
-    </table>
-    </div>
-            <div className='pt-3'>
-                <Data
-                sno = "1"
-                Name ="Navin"
-                regNo="21bce3310"
-                dateOfRegistration="12/12/12"
-                username="nvnie123"
-                />
-                <Data
-                sno = "2"
-                Name ="Navin"
-                regNo="21bce3310"
-                dateOfRegistration="12/12/12"
-                username="nvnie123"
-                />
-                <Data
-                sno = "2"
-                Name ="Navin"
-                regNo="21bce3310"
-                dateOfRegistration="12/12/12"
-                username="nvnie123"
-                />
-                <Data
-                sno = "2"
-                Name ="Navin"
-                regNo="21bce3310"
-                dateOfRegistration="12/12/12"
-                username="nvnie123"
-                />
-                <Data
-                sno = "2"
-                Name ="Navin"
-                regNo="21bce3310"
-                dateOfRegistration="12/12/12"
-                username="nvnie123"
-                />
-                <Data
-                sno = "2"
-                Name ="Navin"
-                regNo="21bce3310"
-                dateOfRegistration="12/12/12"
-                username="nvnie123"
-                />
-                <Data
-                sno = "2"
-                Name ="Navin"
-                regNo="21bce3310"
-                dateOfRegistration="12/12/12"
-                username="nvnie123"
-                />
-                <Data
-                sno = "2"
-                Name ="Navin"
-                regNo="21bce3310"
-                dateOfRegistration="12/12/12"
-                username="nvnie123"
-                />
+          <div className="lg:text-xl  md:text-lg  text-sm">
+            <div className="grid lg:grid-cols-12  grid-cols-11 gap-x-2">
+              <div className="p-2 font-bold truncate">S.No</div>
+              <div className="p-2 lg:col-span-3 col-span-2 font-bold truncate">
+                Name
+              </div>
+              <div className="p-2 col-span-2 font-bold truncate">Reg.No</div>
+              <div className="p-2 col-span-2 font-bold truncate">
+                Date of Registration
+              </div>
+              <div className="p-2 col-span-2 font-bold truncate">Username</div>
+              <div className="p-2 col-span-2 font-bold truncate">
+                Approve/Deny
+              </div>
+
+              {tableData.map((data, index) => {
+                return (
+                  <>
+                    <div className="p-2 font-bold">{index + 1}</div>
+                    <div className="p-2 lg:col-span-3 col-span-2 font-bold truncate">
+                      {data.Name}
+                    </div>
+                    <div className="p-2 col-span-2 font-bold truncate">
+                      {data.Reg_No}
+                    </div>
+                    <div className="p-2 col-span-2 font-bold truncate">
+                      {data.DOR}
+                    </div>
+                    <div className="p-2 col-span-2 font-bold truncate">
+                      {data.Username}
+                    </div>
+                    <div className="p-2 col-span-2 font-bold flex">
+                      <ul className="flex gap-1">
+                        <li className="rounded-full px-2 py-1 bg-[#247000] text-white">
+                          {screenSize.width > 800 ? "Approve" : "✔️"}
+                        </li>
+                        <li className="rounded-full px-2 py-1 bg-[#FF0000] text-white">
+                          {screenSize.width > 800 ? "Deny" : "X"}
+                        </li>
+                      </ul>
+                    </div>
+                  </>
+                );
+              })}
             </div>
-            
+          </div>
+          {screenSize.width < 900 && (
+            <div className="w-1/2 p-2">
+              <QueryComponent />
+            </div>
+          )}
         </div>
-        <div className='static'>
-
-    <div style={{background: "#163560"}} className='h-40 w-40 rounded-full absolute bottom-0 left-0'></div>
-    <div style={{ background: "black", opacity: "50%" }} className='h-28 w-80 rounded-3xl absolute bottom-0 left-80'></div>        </div>
-    </div>
-
-    
-
+        {/* <div className="static">
+          <div
+            style={{ background: "#163560" }}
+            className="h-40 w-40 rounded-full absolute bottom-0 left-0"
+          ></div>
+          <div
+            style={{ background: "black", opacity: "50%" }}
+            className="h-28 w-80 rounded-3xl absolute bottom-0 left-80"
+          ></div>{" "}
+        </div> */}
+      </div>
     </>
-  )
-}
+  );
+};
 
-const Data = (props) => {
-    return (
-        <>
-      <table>
-        
-        <tbody>
-          
-            <tr>
-              <td className=' pr-20 border text-base min-w-[30px]  text-gray-700 '>{props.sno}</td>
-              <td className=' px-20 border text-base min-w-[30px]  text-gray-700 '>{props.Name}</td>
-              <td className=' px-20 border text-base min-w-[30px]  text-gray-700 '>{props.regNo}</td>
-              <td className=' px-28 border text-base min-w-[30px]  text-gray-700 '>{props.dateOfRegistration}</td>
-              <td className=' px-32 border text-base min-w-[30px]  text-gray-700 '>{props.username}</td>
-            </tr>
-
-            
-          
-        </tbody>
-      </table>
-      
-      </>
-    );
-  };
-
-export default adminDashboard
+export default adminDashboard;
