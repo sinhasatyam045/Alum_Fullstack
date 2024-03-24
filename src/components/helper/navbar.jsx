@@ -180,7 +180,7 @@ const Navbar = () => {
   return (
     <>
       {isOpen && screenSize.width < 1000 && (
-        <div className="fixed top-10 w-screen flex justify-end m-auto ">
+        <div className="fixed top-10 w-screen flex justify-end m-auto z-20">
           <div className="bg-white rounded-xl p-3">
             <ul>
               <ListUpper />
