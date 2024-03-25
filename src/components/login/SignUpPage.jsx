@@ -13,20 +13,22 @@ import { IoClose } from "react-icons/io5";
 // activeUser = 2 : Faculty Login
 // activeUser = 3 : Alumni Login
 
+const InitialRegisterState = {
+  type: "Student",
+  userID: "",
+  name: "",
+  email: "",
+  phoneNumber: "",
+  DOB: "",
+  password: "",
+};
+
 const SignUpPage = () => {
   const navigate = useNavigate();
   const [activeUser, setactiveUser] = useState(1);
   const [imageOpacity, setImageOpacity] = useState(100);
 
-  const [user, setUser] = useState({
-    type: "Student",
-    userID: "",
-    name: "",
-    email: "",
-    phoneNumber: "",
-    DOB: "",
-    password: "",
-  });
+  const [user, setUser] = useState(InitialRegisterState);
 
   function handleChange(e) {
     // console.log(e);
@@ -54,6 +56,7 @@ const SignUpPage = () => {
   const handleRegisterClick = () => {
     console.log(user);
     setShowOtpModal(true);
+    setUser(InitialRegisterState);
   };
   const onOtpSubmit = () => {
     // alert("Login Successfull");
