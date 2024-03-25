@@ -57,10 +57,6 @@ const MessageBoard = () => {
     scrollDown();
   }, [messages]);
 
-  function showEnlargedImage(e, index) {
-    console.log(e);
-  }
-
   const handleSendMessage = () => {
     if (newMessage.trim() !== "") {
       const obj = {
@@ -73,7 +69,6 @@ const MessageBoard = () => {
         ...messages,
         { type: "text", text: newMessage, sender: "me" },
       ]);
-      console.log(window);
       setNewMessage("");
     }
   };
@@ -222,6 +217,7 @@ const MessageBoard = () => {
                     </div>
                   ) : (
                     <div
+                      key={index}
                       className={`flex w-full ${
                         message.sender === "me"
                           ? "justify-end	"
@@ -233,7 +229,6 @@ const MessageBoard = () => {
                         className={`mb-4 m-2 border-2 border-black `}
                         width={"200px"}
                         src={message.url}
-                        onClick={(e) => showEnlargedImage(e, index)}
                       ></img>
                     </div>
                   );
