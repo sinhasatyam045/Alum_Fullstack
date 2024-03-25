@@ -174,13 +174,13 @@ function Table(data, buttonValue) {
         <div className="p-2 col-span-2 font-bold flex">
           <ul className="flex gap-1">
             <li
-              className="rounded-full px-2 py-1 bg-[#247000] text-white"
+              className="rounded-full px-2 py-1 bg-[#247000] cursor-pointer text-white hover:bg-[#319a00]"
               onClick={(e) => handleApprove(e, data, buttonValue)}
             >
               {screenSize.width > 800 ? "Approve" : "✔️"}
             </li>
             <li
-              className="rounded-full px-2 py-1 bg-[#FF0000] text-white"
+              className="rounded-full px-2 py-1 bg-[#FF0000] cursor-pointer text-white hover:bg-[#bb0000]"
               onClick={(e) => handleDeny(e, data, buttonValue)}
             >
               {screenSize.width > 800 ? "Deny" : "X"}
@@ -214,7 +214,7 @@ const adminDashboard = () => {
                         selectedButton === 0
                           ? "bg-[#163560] text-white"
                           : "text-black"
-                      } rounded-full lg:px-14 md:px-10 px-6 py-1 border-2 border-black`}
+                      } rounded-full lg:px-14 md:px-10 px-6 py-1 border-2 border-black hover:bg-[#163560] hover:text-white`}
                     >
                       Student
                     </li>
@@ -224,7 +224,7 @@ const adminDashboard = () => {
                         selectedButton === 1
                           ? "bg-[#163560] text-white"
                           : "text-black"
-                      } rounded-full lg:px-14 md:px-10 px-6 py-1 border-2 border-black`}
+                      } rounded-full lg:px-14 md:px-10 px-6 py-1 border-2 border-black hover:bg-[#163560] hover:text-white`}
                     >
                       Faculty
                     </li>
@@ -234,7 +234,7 @@ const adminDashboard = () => {
                         selectedButton === 2
                           ? "bg-[#163560] text-white"
                           : "text-black"
-                      } rounded-full lg:px-14 md:px-10 px-6 py-1 border-2 border-black`}
+                      } rounded-full lg:px-14 md:px-10 px-6 py-1 border-2 border-black hover:bg-[#163560] hover:text-white`}
                     >
                       Alumni
                     </li>
