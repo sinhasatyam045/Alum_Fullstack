@@ -192,13 +192,13 @@ const Dashboard = () => {
         {screenSize.width < 820 && (
           <div
             className={`${
-              openDrawer ? " text-white bg-[#163560]" : "w-1/12 text-black"
-            }`}
+              openDrawer ? " text-white bg-[#163560]" : "w-1/12 text-black "
+            } `}
           >
-            <ul>
+            <ul className="">
               {/* Box to open */}
               <li
-                className="p-2 flex"
+                className="p-2 flex cursor-pointer hover:bg-blue-700"
                 onClick={() => {
                   setOpenDrawer((prev) => !prev);
                 }}
@@ -256,7 +256,7 @@ const Dashboard = () => {
               </li>
               {/* Home Button */}
               <li
-                className="p-2 flex"
+                className="p-2 flex cursor-pointer hover:bg-blue-700"
                 onClick={() => {
                   navigate("/dashboard");
                 }}
@@ -279,7 +279,7 @@ const Dashboard = () => {
               </li>
               {/* Messages */}
               <li
-                className="p-2 flex"
+                className="p-2 flex cursor-pointer hover:bg-blue-700"
                 onClick={() => {
                   navigate("/messages");
                 }}
@@ -350,7 +350,7 @@ const Dashboard = () => {
                 {openDrawer && <div className="px-2">Messages</div>}
               </li>
               {/* Archive */}
-              <li className="p-2 flex">
+              <li className="p-2 flex cursor-pointer hover:bg-blue-700">
                 <div className="p-[1px]">
                   {openDrawer ? (
                     <svg
@@ -418,7 +418,7 @@ const Dashboard = () => {
               </li>
               {/* Profile */}
               <li
-                className="p-2 flex"
+                className="p-2 flex cursor-pointer hover:bg-blue-700"
                 onClick={() => {
                   navigate("/profile");
                 }}
@@ -475,7 +475,7 @@ const Dashboard = () => {
                 {openDrawer && <div className="px-2">Profile</div>}
               </li>
               {/* Events */}
-              <li className="p-2 flex">
+              <li className="p-2 flex cursor-pointer hover:bg-blue-700">
                 <div className="p-[1px]">
                   {openDrawer ? (
                     <svg
