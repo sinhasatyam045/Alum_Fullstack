@@ -7,6 +7,7 @@ import SchoolLogo from "../../assets/images/message/Schoollogo.png";
 import ProfilePicture from "../../assets/images/message/profile.png";
 import NavigationPanel from "./NavigationPanel";
 import { IoIosSend } from "react-icons/io";
+import { AiOutlinePlusSquare } from "react-icons/ai";
 
 const chatList = [
   {
@@ -49,6 +50,17 @@ const MessageBoard = () => {
   const [clickMessage, setclickMessage] = useState("");
   const [chatOpened, setChatOpended] = useState({});
 
+  useEffect(() => {
+    function scrollDown() {
+      window.scrollTo(0, document.body.scrollHeight);
+    }
+    scrollDown();
+  }, [messages]);
+
+  function showEnlargedImage(e, index) {
+    console.log(e);
+  }
+
   const handleSendMessage = () => {
     if (newMessage.trim() !== "") {
       const obj = {
@@ -57,7 +69,11 @@ const MessageBoard = () => {
         chatOpened,
       };
       console.log(obj);
-      setMessages([...messages, { text: newMessage, sender: "me" }]);
+      setMessages([
+        ...messages,
+        { type: "text", text: newMessage, sender: "me" },
+      ]);
+      console.log(window);
       setNewMessage("");
     }
   };
@@ -76,6 +92,22 @@ const MessageBoard = () => {
     setMessages([]);
   };
 
+  function handleFileUploadClick(e) {
+    const file = e.target.files[0];
+    console.log(file);
+    // setFile([...file, );
+    setMessages([
+      ...messages,
+      {
+        type: "image",
+        url: URL.createObjectURL(e.target.files[0]),
+        sender: "me",
+      },
+    ]);
+
+    // console.log(e);
+  }
+
   function handleEscPress(e) {
     // console.log(e);
     if (e.key !== "Escape") {
@@ -83,10 +115,12 @@ const MessageBoard = () => {
     }
     setclickMessage("");
   }
+
   useEffect(() => {
     window.addEventListener("keydown", handleEscPress);
     return () => window.removeEventListener("keydown", handleEscPress);
   }, []);
+
   return (
     <div className="flex flex-col h-screen">
       {/* Header */}
@@ -169,25 +203,57 @@ const MessageBoard = () => {
               <img src={NoProfile} className="w-12 h-12"></img>
               <h2 className="text-white ml-4">{clickMessage}</h2>
             </div>
-            <div className="p-4 flex-1 overflow-y-scroll">
-              {messages.map((message, index) => (
-                <div
-                  key={index}
-                  className={`mb-4 ${
-                    message.sender === "me" ? "text-right" : "text-left"
-                  }`}
-                >
-                  <span
-                    style={{ backgroundColor: "rgb(22, 53, 96)" }}
-                    className={`inline-block p-2 bg-blue-500 rounded-lg text-white`}
-                  >
-                    {message.text}
-                  </span>
-                </div>
-              ))}
+            <div className={`flex-1`}>
+              <div className="p-4 ">
+                {messages.map((message, index) => {
+                  return message.type === "text" ? (
+                    <div
+                      key={index}
+                      className={`mb-4 ${
+                        message.sender === "me" ? "text-right" : "text-left"
+                      }`}
+                    >
+                      <span
+                        style={{ backgroundColor: "rgb(22, 53, 96)" }}
+                        className={`inline-block p-2 bg-blue-500 rounded-lg text-white`}
+                      >
+                        {message.text}
+                      </span>
+                    </div>
+                  ) : (
+                    <div
+                      className={`flex w-full ${
+                        message.sender === "me"
+                          ? "justify-end	"
+                          : "justify-start	"
+                      }`}
+                    >
+                      <img
+                        key={index}
+                        className={`mb-4 m-2 border-2 border-black `}
+                        width={"200px"}
+                        src={message.url}
+                        onClick={(e) => showEnlargedImage(e, index)}
+                      ></img>
+                    </div>
+                  );
+                })}
+              </div>
             </div>
-            <div className="flex p-2">
+
+            <div className="bg-white sticky inset-x-0 bottom-0 flex p-2 ">
               <div className="flex px-4 w-full mx-auto gap-2">
+                <label htmlFor="fileInput">
+                  <AiOutlinePlusSquare size={38}></AiOutlinePlusSquare>
+                  <input
+                    id="fileInput"
+                    type="file"
+                    accept="image/*"
+                    onChange={(e) => handleFileUploadClick(e)}
+                    style={{ display: "none" }}
+                  />
+                </label>
+
                 <input
                   type="text"
                   value={newMessage}
