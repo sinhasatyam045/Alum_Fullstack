@@ -1,5 +1,5 @@
 import NavBar from "../../helper/navbar";
-import { useState } from "react";
+import { Fragment, useState } from "react";
 import useScreenSize from "../../../utils/useScreenSize";
 
 const FacultyTableData = [
@@ -153,6 +153,7 @@ function Table(data, buttonValue) {
     };
     console.log(user);
   }
+
   function handleDeny(e, data, index) {
     const user = {
       status: "Denied",
@@ -161,9 +162,10 @@ function Table(data, buttonValue) {
     };
     console.log(user);
   }
+
   return data.map((data, index) => {
     return (
-      <>
+      <Fragment key={index}>
         <div className="p-2 font-bold">{index + 1}</div>
         <div className="p-2 lg:col-span-3 col-span-2 font-bold truncate">
           {data.Name}
@@ -187,12 +189,12 @@ function Table(data, buttonValue) {
             </li>
           </ul>
         </div>
-      </>
+      </Fragment>
     );
   });
 }
 
-const adminDashboard = () => {
+const AdminDashboard = () => {
   const screenSize = useScreenSize();
   const [selectedButton, setSelectedButton] = useState(0);
   return (
@@ -262,8 +264,8 @@ const adminDashboard = () => {
                           xmlns="http://www.w3.org/2000/svg"
                         >
                           <path
-                            fill-rule="evenodd"
-                            clip-rule="evenodd"
+                            fillRule="evenodd"
+                            clipRule="evenodd"
                             d="M9.02317 9.58741C8.0922 10.3237 6.91128 10.764 5.62633 10.764C2.62093 10.764 0.18457 8.35531 0.18457 5.38398C0.18457 2.41265 2.62093 0.00390625 5.62633 0.00390625C8.63173 0.00390625 11.0681 2.41265 11.0681 5.38398C11.0681 6.6542 10.6228 7.82162 9.87823 8.74199L13.3229 12.2695C13.559 12.5029 13.559 12.8814 13.3229 13.1149C13.0868 13.3483 12.7039 13.3483 12.4678 13.1149L9.02317 9.58741ZM1.39385 5.38398C1.39385 3.07294 3.2888 1.19948 5.62633 1.19948C7.96387 1.19948 9.85881 3.07294 9.85881 5.38398C9.85881 6.5116 9.40767 7.53505 8.6741 8.28753C8.65365 8.30312 8.63398 8.32018 8.61524 8.33871C8.59648 8.35725 8.57922 8.37671 8.56344 8.39694C7.80231 9.12234 6.76702 9.56847 5.62633 9.56847C3.2888 9.56847 1.39385 7.69501 1.39385 5.38398Z"
                             fill="#FFFFFF"
                           />
@@ -330,4 +332,4 @@ const adminDashboard = () => {
   );
 };
 
-export default adminDashboard;
+export default AdminDashboard;
