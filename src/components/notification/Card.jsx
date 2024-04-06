@@ -25,17 +25,21 @@ export default function Card({
             <img
               src={img1}
               alt="john"
-              className="h-12 w-12 relative left-[17.5%] -top-[10%] rounded-full overflow-hidden"
+              className="sm:h-12 sm:w-12 h-8 w-8  relative left-[17.5%] -top-[10%] rounded-full overflow-hidden"
             />
             <img
               src={value}
               alt="john"
-              className="h-12 w-12 relative -left-[17.5%] top-[10%] rounded-full overflow-hidden "
+              className="sm:h-12 sm:w-12 h-8 w-8  relative -left-[17.5%] top-[10%] rounded-full overflow-hidden "
             />
           </div>
         ) : (
           <div className="h-[100%] w-[15%]  flex justify-center items-center">
-            <img src={value} alt="john" className="h-12 w-12 rounded-full" />
+            <img
+              src={value}
+              alt="john"
+              className="sm:h-12 sm:w-12 h-8 w-8 rounded-full"
+            />
           </div>
         )}
         {/* <div className="h-[100%] w-[10%] border-2 border-gray-700 flex justify-center items-center">
@@ -44,16 +48,18 @@ export default function Card({
 
         <div className="h-[100%] w-[65%] ">
           {notifType === "post" ? (
-            <div className="text-lg mb-1 ">
+            <div className="sm:text-lg mb-1 text-base ">
               {message}
               <span className="text-red-600"> ❤</span>
             </div>
+          ) : notifType === "newReq" ? (
+            <div className="view:text-lg mb-1 text-sm">{message}</div>
           ) : (
-            <div className="text-lg mb-1">{message}</div>
+            <div className="sm:text-lg mb-1 text-base">{message}</div>
           )}
           {notifType === "newReq" ? (
             <div className="flex mb-1">
-              <div className="text-xs opacity-75 ">{desc}</div>
+              <div className="sm:text-base opacity-75 text-xs ">{desc}</div>
               <img
                 src="./Images/remove.png"
                 alt="my image"
@@ -69,13 +75,13 @@ export default function Card({
             </div>
           ) : notifType === "prSolo" ? (
             <div className="flex mb-1] justify-between">
-              <div className="text-xs opacity-75 mb-1">{desc}</div>
-              <div className="text-xs w-[20%] border border-green-500 text-center bg-white text-green-500 rounded-xl overflow-hidden">
+              <div className="sm:text-sm opacity-75 mb-1 text-xs">{desc}</div>
+              <div className="sm:text-xs text-[0.5rem] sm:w-[40%] h-[10%] sm:h-[100%] sm:p-1 px-2 border border-green-500 text-center bg-white text-green-500 rounded-xl overflow-hidden">
                 Approved
               </div>
             </div>
           ) : (
-            <div className="text-xs opacity-75 mb-1">{desc}</div>
+            <div className="text-xs opacity-75 mb-1 sm:text-sm">{desc}</div>
           )}
           <div>
             {notifType !== "post" && notifType !== "newLogin" ? (
