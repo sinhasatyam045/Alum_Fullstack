@@ -6,6 +6,11 @@ import { useState } from "react";
 import Notification from "../notification/notification";
 import useScreenSize from "../../utils/useScreenSize";
 import { AiOutlineFileImage } from "react-icons/ai";
+import { TiMessages } from "react-icons/ti";
+import { IoIosNotificationsOutline } from "react-icons/io";
+import { AiOutlinePlus } from "react-icons/ai";
+import { MdOutlineBookmarkBorder } from "react-icons/md";
+import { FaArrowRight } from "react-icons/fa";
 import { AiOutlineLink, AiOutlineCaretRight } from "react-icons/ai";
 
 const temppostData = [
@@ -127,64 +132,80 @@ const Dashboard = () => {
         </div> */}
         {/* Profile Section */}
         {screenSize.width > 820 && (
-          <div className="w-1/5 h-screen bg-indigo-200 p-4 flex flex-col items-center ">
-            {/* <div className="pb-20">
-            <img src="Images/logo.png" alt="" />
-          </div> */}
-            <div className="mb-4">
-              <img
-                src="Images/profile.jpg"
-                alt="Profile"
-                className="w-32 h-32 rounded-full object-cover border-2 border-white"
-              />
-            </div>
-            <div className="text-blue-900 text-center">
-              <h2 className="font-bold text-lg">John Doe</h2>
-              <p>Pragyan's Alumini</p>
-            </div>
-            {/* Navigation Menu */}
-            <div className="mt-4 w-4/5">
-              <ul className="text-white space-y-2 text-sm md:text-md lg:text-lg ">
-                <li>
-                  <button
-                    className="flex justify-between w-full bg-blue-900 hover:bg-blue-700 text-white px-4 py-2 rounded-xl focus:outline-none"
-                    onClick={handleMessageClick}
-                  >
-                    <div>Messages</div> 💬
-                  </button>
-                </li>
-                <li>
-                  <button
-                    className="flex justify-between w-full bg-blue-900 hover:bg-blue-700 text-white px-4 py-2 rounded-xl focus:outline-none"
-                    onClick={handleNotificationClick}
-                  >
-                    <div>Notifications</div>
-                    🔔
-                  </button>
-                </li>
-
-                <li>
-                  <button className="flex justify-between w-full bg-blue-900 hover:bg-blue-700 text-white px-4 py-2 rounded-xl focus:outline-none">
-                    <div>Saved Items</div> 🏷️
-                  </button>
-                </li>
-                <li>
-                  <button
-                    className="flex justify-between w-full bg-blue-900 hover:bg-blue-700 text-white px-4 py-2 rounded-xl focus:outline-none"
-                    onClick={handleAdminClick}
-                  >
-                    <div>Admin Login</div> 🧑🏻‍💼
-                  </button>
-                </li>
-                <li>
-                  <button
-                    className="flex justify-between w-full bg-blue-900 hover:bg-blue-700 text-white px-4 py-2 rounded-xl focus:outline-none"
-                    onClick={handleAdminDashboardClick}
-                  >
-                    <div>Admin Dashboard</div> 🧑🏻‍💼
-                  </button>
-                </li>
-              </ul>
+          <div className="w-80 relative ">
+            <div className="w-5/6 relative pt-20 mt-16 rounded-md  bg-blue  text-white my-7 flex flex-col items-center md:mx-14">
+              {/* <div className="pb-20">
+              <img src="Images/logo.png" alt="" />
+            </div> */}
+              <div className="absolute -top-14 z-10 ">
+                <img
+                  src="Images/profile.jpg"
+                  alt="Profile"
+                  className="w-32 h-32 rounded-full object-cover border-2 border-black"
+                />
+              </div>
+              <div className="text-center">
+                <h2 className="font-bold text-lg">John Doe</h2>
+                <p>Pragyan's Alumini</p>
+              </div>
+              {/* Navigation Menu */}
+              <div className="mt-4 w-full">
+                <ul className="text-white text-sm md:text-md lg:text-lg w-full">
+                  <hr />
+                  <li className="px-4">
+                    <button
+                      className="flex justify-between items-center w-full py-2 bg-blue hover:bg-blue text-white"
+                      onClick={handleMessageClick}
+                    >
+                      <div>Messages</div> <TiMessages className="mr-0.5" />
+                    </button>
+                  </li>
+                  <hr />
+                  <li className="px-4">
+                    <button
+                      className="flex justify-between items-center w-full py-2 bg-blue hover:bg-blue text-white"
+                      onClick={handleNotificationClick}
+                    >
+                      <div>Notifications</div>
+                      <IoIosNotificationsOutline className="text-2xl" />
+                    </button>
+                  </li>
+                  <hr />
+                  <li className="px-4">
+                    <button className="flex justify-between items-center w-full py-2 bg-blue hover:bg-blue text-white">
+                      <div>Events</div>{" "}
+                      <AiOutlinePlus className="text-xl mr-0.5" />
+                    </button>
+                  </li>
+                  <hr />
+                  <li className="px-4">
+                    <button className="flex justify-between w-full items-center py-2 bg-blue hover:bg-blue text-white">
+                      <div>Saved Items</div>{" "}
+                      <MdOutlineBookmarkBorder className="text-x mr-0.5" />
+                    </button>
+                  </li>
+                  <hr />
+                  <li className="px-4">
+                    <button
+                      className="flex justify-between items-center w-full py-2 bg-blue hover:bg-blue text-white"
+                      onClick={handleAdminClick}
+                    >
+                      <div>Admin Login</div>{" "}
+                      <FaArrowRight className="text-sm mr-1" />
+                    </button>
+                  </li>
+                  <hr />
+                  <li className="px-4">
+                    <button
+                      className="flex justify-between w-full items-center py-2 pb-3 bg-blue hover:bg-blue text-white"
+                      onClick={handleAdminDashboardClick}
+                    >
+                      <div>Admin Dashboard</div>{" "}
+                      <FaArrowRight className="text-sm mr-1" />
+                    </button>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         )}
@@ -515,18 +536,58 @@ const Dashboard = () => {
         <div
           className={`${
             screenSize.width > 820 ? "w-3/5" : "w-11/12"
-          } h-screen bg-gray-200 p-4 overflow-y-auto`}
+          } h-screen p-4 overflow-y-auto`}
         >
           {/* Example Post */}
 
           {comp !== "notification" && (
-            <div className="w-4/5 mx-auto border overflow-y ">
-              <div className="bg-white p-4 pb-2 rounded-xl mb-4 ">
-                <div className="flex items-center mb-3 align-top">
+            <div className="w-11/12 mx-auto overflow-y ">
+              <div className=" p-4 bg-lightgray shadow-xl rounded-xl mb-4 ">
+                <div>
+                  <div className="flex items-center">
+                    <img
+                      src="Images/profile.jpg"
+                      alt={` avatar`}
+                      className="w-10 h-10 rounded-full object-cover mr-3 border-2 border-black"
+                    />
+                    <input
+                      type="text"
+                      value={newPostText}
+                      onChange={(e) => handleInputTextChange(e)}
+                      className="md:p-3 p-2 rounded-3xl md:w-full text-xs md:text-base w-11/12 font-semibold placeholder:text-black bg-gray"
+                      placeholder="Start A Post"
+                    ></input>
+                  </div>
+                  <div className="md:flex w-5/6 mx-auto">
+                    <div className="flex md:p-2 items-center text-xs md:text-base pt-2 mt-2">
+                      <div>
+                        <AiOutlineFileImage size={22} />
+                      </div>
+                      <div>Add Image</div>
+                    </div>
+                    <div className="flex items-center md:p-2 text-xs md:text-base pt-2 mt-2">
+                      <div>
+                        <AiOutlineLink size={22} />
+                      </div>
+                      <div className="pl-1">Add Link</div>
+                    </div>
+                  </div>
+                  {/* <div
+                    className="cursor-pointer w-1/2 mx-auto"
+                    onClick={(e) => handleAddPost(e)}
+                  >
+                    <div className="flex p-2 ">
+                      <div className="p-2 bg-slate-100 text-xs md:text-base rounded-xl">
+                        Add Post
+                      </div>
+                    </div>
+                  </div> */}
+                </div>
+                {/* <div className="flex  mb-3 align-top">
                   <img
                     src="Images/profile.jpg"
                     alt={` avatar`}
-                    className="w-10 h-10 rounded-full object-cover mr-3"
+                    className="w-10 h-10 rounded-full object-cover mr-3 border-2 border-black"
                   />
                   <div className="w-full">
                     <div>
@@ -534,23 +595,22 @@ const Dashboard = () => {
                         type="text"
                         value={newPostText}
                         onChange={(e) => handleInputTextChange(e)}
-                        className="bg-slate-200 p-3 rounded-3xl w-full font-semibold placeholder:text-stone-600"
+                        className="md:p-3 p-2 rounded-3xl md:w-full text-xs w-11/12 font-semibold placeholder:text-black bg-gray"
                         placeholder="Start A Post"
                       ></input>
                     </div>
-
-                    <div className="flex justify-between">
+                    <div className="flex md:justify-between md:flex-row flex-col">
                       <div className="flex">
                         <div className="cursor-pointer mx-2">
-                          <div className="flex p-2 mt-2">
+                          <div className="flex md:p-2 items-center text-xs md:text-lg pt-2 mt-2">
                             <div>
                               <AiOutlineFileImage size={22} />
                             </div>
-                            <div className="pl-1">Add Image</div>
+                            <div>Add Image</div>
                           </div>
                         </div>
                         <div className="cursor-pointer mx-2">
-                          <div className="flex p-2 mt-2">
+                          <div className="flex items-center md:p-2 text-xs md:text-lg pt-2 mt-2">
                             <div>
                               <AiOutlineLink size={22} />
                             </div>
@@ -563,16 +623,19 @@ const Dashboard = () => {
                         onClick={(e) => handleAddPost(e)}
                       >
                         <div className="flex p-2 ">
-                          <div className="p-2 bg-slate-100 rounded-xl">
+                          <div className="p-2 bg-slate-100 text-xs md:text-lg rounded-xl">
                             Add Post
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>
+                </div> */}
               </div>
-
+              <div className="flex items-center py-3">
+                <hr className="flex-grow" />
+                <p className="px-2 text-sm">Sort By : Dropdown</p>
+              </div>
               {postData.map((post, id) => {
                 // console.log(post);
                 return (
@@ -602,19 +665,25 @@ const Dashboard = () => {
 
         {/* Spotlights Section */}
         {screenSize.width > 820 && (
-          <div className="w-1/5 h-screen bg-indigo-200 p-4">
-            <div className="w-4/5  mx-auto">
-              <div className="mb-4">
-                <h2 className="text-blue-900 font-bold text-xl pt-20">
-                  Spotlights
-                </h2>
+          <div className="w-1/5 h-screen relative text-white ">
+            <div className="w-5/6 relative bg-blue px-3 py-2 rounded-md  mx-auto">
+              <div className="mb-4 ">
+                <h2 className="font-bold text-lg">Spotlights</h2>
               </div>
               {/* Styled Bullet Points for Important Notices */}
-              <ul className="text-blue-900 list-disc pl-4 space-y-2">
-                <li className="flex items-center">🎯Important notice 1</li>
-                <li className="flex items-center">🎯Important notice 2</li>
-                <li className="flex items-center">🎯Important notice 3</li>
-                {/* Add more styled bullet points as needed */}
+              <ul className="list-disc space-y-2">
+                <li className="flex items-center">
+                  <span className="inline-block w-3 h-3 bg-white rounded-full mr-2"></span>{" "}
+                  Important notice 1
+                </li>
+                <li className="flex items-center">
+                  <span className="inline-block w-3 h-3 bg-white rounded-full mr-2"></span>{" "}
+                  Important notice 2
+                </li>
+                <li className="flex items-center">
+                  <span className="inline-block w-3 h-3 bg-white rounded-full mr-2"></span>{" "}
+                  Important notice 3
+                </li>
               </ul>
             </div>
           </div>
