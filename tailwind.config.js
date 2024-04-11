@@ -3,9 +3,6 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   darkMode: "class", // or 'media' if you want to use the OS color scheme
   theme: {
-    screens:{
-      'view':'911px',
-    },
     extend: {
       colors: {
         blue: "#204C89",
