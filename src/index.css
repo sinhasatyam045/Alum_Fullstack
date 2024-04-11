@@ -51,7 +51,7 @@ h1 {
   line-height: 1.1;
 }
 
-button {
+.button {
   border-radius: 15px;
   color: #fdfdfd;
   padding: 0.6em 1.2em;
@@ -60,13 +60,11 @@ button {
   font-family: inherit;
   background-color: #163560;
   cursor: pointer;
-
 }
 
 button:hover {
   background-color: #2a4161;
 }
-
 
 .dark {
   --body-bg: #060125;

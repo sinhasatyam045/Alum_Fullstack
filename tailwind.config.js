@@ -8,22 +8,18 @@ export default {
     },
     extend: {
       colors: {
-        button: {
-          DEFAULT: "#000000", // Replace with your desired button color
-          hover: "#1f4a86", // Replace with your desired hover color
-        },
-        textColor: {
-          white: "#ffffff", // Add the white text color
-        },
-        backgroundColor: {
-          darkblue: "#1e1b4b",
-        },
+        blue: "#204C89",
+        followBtn: "#0500FF",
+        lightgray: "#F5F5F5",
+        gray: "#D9D9D9",
+        white: "#ffffff",
+        commentblue: "#0064FF", // Add the white text color directly under colors
+      },
+      backgroundColor: {
+        darkblue: "#1e1b4b",
       },
       borderRadius: {
         DEFAULT: "0.25rem", // Replace with your desired border radius value
-      },
-      textColor: {
-        white: "#ffffff", // Add the white text color
       },
     },
   },
