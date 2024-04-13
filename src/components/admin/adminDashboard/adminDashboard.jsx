@@ -275,7 +275,7 @@ const AdminDashboard = () => {
     <>
       <NavBar />
       <div className="bg-indigo-100 h-dvh">
-      <div className={`bg-indigo-100 min-h-[${screenSize.height}px]`}>
+      <div className={`bg-[#f1f1f1] min-h-[${screenSize.height}px]`}>
           <div className="w-11/12 mx-auto">
             <div className="flex pt-4">
               <div className="text-6xl text-gray-500 font-bold pb-7 pt-4 w-11/12">
