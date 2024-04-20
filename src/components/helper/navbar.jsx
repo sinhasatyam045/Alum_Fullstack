@@ -150,7 +150,7 @@ function ListUpper() {
         onClick={() => {
           navigate("/");
         }}
-        // TODO Replace with the required path
+        // TODO Replace with the required
       >
         <div className="flex items-center px-3 py-1 rounded-md hover:bg-gray-300">
           <img className="w-6 h-6 md:w-auto md:h-auto" src="./src/assets/svgs/people_2.svg" alt="people_2" />
