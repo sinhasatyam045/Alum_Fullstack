@@ -14,6 +14,11 @@ export default {
         },
         backgroundColor: {
           darkblue: "#1e1b4b",
+          bluecustom: "#204C89",
+          lightgray: "#F5F5F5",
+          gray: "#D9D9D9",
+          followBtn: "#0500FF",
+          commentblue: "#0064FF",
         },
       },
       borderRadius: {

@@ -1,4 +1,6 @@
 import React from "react";
+import { FaRegThumbsUp } from "react-icons/fa6";
+import { FiSend } from "react-icons/fi";
 
 const Post = ({
   username,
@@ -25,18 +27,27 @@ const Post = ({
   }
 
   return (
-    <div className="bg-white p-4 mb-4 rounded-2xl shadow">
+    <div className="bg-backgroundColor-lightgray p-4 mb-4 rounded-2xl shadow-xl">
       {/* Post Header */}
-      <div className="flex items-center mb-3">
-        <img
-          src={avatar}
-          alt={`${username}'s avatar`}
-          className="w-10 h-10 rounded-full object-cover mr-3"
-        />
-        <div>
-          <p className="text-gray-800 font-bold">{username}</p>
-          <p className="text-gray-600">Posted 3 hours ago</p>
+      <div className="flex items-center justify-between mb-3">
+        <div className="flex items-center">
+          <img
+            src={avatar}
+            alt={`${username}'s avatar`}
+            className="w-10 h-10 rounded-full border-2 border-black object-cover mr-3"
+          />
+          <div>
+            <p className="text-gray-800 font-bold text-sm md:text-base">
+              {username}
+            </p>
+            <p className="text-gray-600 text-xs md:text-base max-w-20 md:max-w-full">
+              Posted 3 hours ago
+            </p>
+          </div>
         </div>
+        <button className="bg-backgroundColor-gray py-0 px-2 md:px-3 rounded-2xl text-xs md:text-base text-backgroundColor-followBtn">
+          + Follow
+        </button>
       </div>
 
       {/*  Post Text */}
@@ -56,23 +67,44 @@ const Post = ({
       </div>
 
       {/* Post Actions (Likes and Comments) */}
-      <div className="flex justify-between">
-        <div className="flex items-center space-x-4">
-          <button
-            className="flex items-center text-white text-gray-100"
+      <div className="">
+        <div className="flex items-center w-full justify-between space-x-4">
+          <p
+            className="pl-5 flex items-center gap-1"
             onClick={(e) => handleLike(e, postId)}
           >
-            ❤️ Like
-          </button>
-          <button
+            <FaRegThumbsUp className="text-backgroundColor-commentblue " />
+            {likes}
+          </p>
+
+          {/* <button
             className="flex items-center text-gray-100"
             onClick={(e) => handleComment(e, postId)}
           >
             💬 Comment
-          </button>
+          </button> */}
+          <p className="pr-2">
+            <FiSend className="text-xl" />
+          </p>
         </div>
-        <div className="text-gray-500">
-          {likes} Likes - {comments} Comments
+        <div>
+          <div className="flex items-center pr-6 pl-2 py-2 mx-auto">
+            <img
+              src="Images/profile.jpg"
+              alt={` avatar`}
+              className="w-10 h-10 rounded-full object-cover mr-3 border-2 border-black"
+            />
+            <input
+              type="text"
+              // value={newPostText}
+              // onChange={(e) => handleInputTextChange(e)}
+              className="md:p-2 p-1 rounded-3xl md:w-full text-xs md:text-base w-11/12 font-semibold placeholder:text-black bg-backgroundColor-gray"
+              placeholder="Add a comment..."
+            ></input>
+          </div>
+          <p className="text-backgroundColor-commentblue pl-2">
+            View All comments
+          </p>
         </div>
       </div>
     </div>
