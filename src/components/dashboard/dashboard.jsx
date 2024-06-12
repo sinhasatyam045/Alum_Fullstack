@@ -545,7 +545,7 @@ const Dashboard = () => {
           {comp !== "notification" && (
             <div className="w-11/12 mx-auto overflow-y ">
               <div className=" p-4 bg-backgroundColor-lightgray shadow-xl rounded-xl mb-4 ">
-                <div>
+                {/* <div>
                   <div className="flex items-center">
                     <img
                       src="Images/profile.jpg"
@@ -576,18 +576,18 @@ const Dashboard = () => {
                       </div>
                     </div>
                   </div>
-                  {/* <div
-                    className="cursor-pointer w-1/2 mx-auto"
+                  <div
+                    className="cursor-pointer w-1/2 mx-auto bg-black"
                     onClick={(e) => handleAddPost(e)}
                   >
                     <div className="flex p-2 ">
-                      <div className="p-2 bg-slate-100 text-xs md:text-base rounded-xl">
+                      <div className="p-2 bg-backgroundColor-bluecustom text-white text-xs md:text-base rounded-xl justify-end">
                         Add Post
                       </div>
                     </div>
-                  </div> */}
-                </div>
-                {/* <div className="flex  mb-3 align-top">
+                  </div>
+                </div> */}
+                <div className="flex  mb-3 align-top">
                   <img
                     src="Images/profile.jpg"
                     alt={` avatar`}
@@ -599,7 +599,7 @@ const Dashboard = () => {
                         type="text"
                         value={newPostText}
                         onChange={(e) => handleInputTextChange(e)}
-                        className="md:p-3 p-2 rounded-3xl md:w-full text-xs w-11/12 font-semibold placeholder:text-black bg-gray"
+                        className="md:p-3 p-2 rounded-3xl md:w-full text-xs w-11/12 font-semibold placeholder:text-black bg-backgroundColor-gray"
                         placeholder="Start A Post"
                       ></input>
                     </div>
@@ -634,7 +634,7 @@ const Dashboard = () => {
                       </div>
                     </div>
                   </div>
-                </div> */}
+                </div>
               </div>
               <div className="flex items-center py-3">
                 <hr className="flex-grow" />

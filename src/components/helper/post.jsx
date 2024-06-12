@@ -1,4 +1,3 @@
-import React from "react";
 import { FaRegThumbsUp } from "react-icons/fa6";
 import { FiSend } from "react-icons/fi";
 
