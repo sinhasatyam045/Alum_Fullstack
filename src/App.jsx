@@ -13,11 +13,13 @@ import ScreenOne from "./components/onBoardings/screenOne.jsx";
 import ScreenTwo from "./components/onBoardings/screenTwo.jsx";
 import ScreenThree from "./components/onBoardings/screenThree.jsx";
 import AdminDashboard from "./components/admin/adminDashboard/adminDashboard.jsx";
+import AuthProvider from "./Contexts/AuthContext.jsx";
 
 
 
 function App() {
   return (
+    <AuthProvider>
     <Router>
       <div>
         <Routes>
@@ -35,12 +37,15 @@ function App() {
           <Route path="/onboarding2" element={<ScreenTwo />} />
           <Route path="/onboarding3" element={<ScreenThree />} />
           <Route path="/admindashboard" element={<AdminDashboard/>} />
+          
             
         </Routes>
       </div>
     </Router>
+    </AuthProvider>
 
   );
+  
 }
 
 export default App;
